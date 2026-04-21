@@ -3,17 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import { Sidebar } from './components/Sidebar';
 import { Dashboard } from './components/Dashboard';
 import { FundingDashboard } from './components/FundingDashboard';
 import { KreditRetailDashboard } from './components/KreditRetailDashboard';
 import { EkosistemRegionDashboard } from './components/EkosistemRegionDashboard';
+import { Login } from './components/Login';
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [activeMenu, setActiveMenu] = useState('bpa');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    // Cek status autentikasi dari localStorage saat komponen dimount
+    const authStatus = localStorage.getItem('dashboard_auth');
+    if (authStatus === 'authenticated') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  if (!isAuthenticated) {
+    return <Login onSuccess={() => setIsAuthenticated(true)} />;
+  }
 
   return (
     <div className="flex h-screen w-full bg-slate-50 overflow-hidden font-sans relative">
