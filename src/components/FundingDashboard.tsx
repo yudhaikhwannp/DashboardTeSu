@@ -19,7 +19,7 @@ import {
   ResponsiveContainer,
   Cell
 } from 'recharts';
-import { fundingBranches, getFundingAreaTotal, FundingBranch, FundingLagging } from '../data/mockData';
+import { fundingBranches, getFundingAreaTotal, FundingBranch, FundingLagging, positionDateTexts } from '../data/MasterData';
 
 export function FundingDashboard() {
   const [selectedBranchCode, setSelectedBranchCode] = useState<string>('all');
@@ -60,6 +60,8 @@ export function FundingDashboard() {
     }
     return fundingBranches.filter(b => b.code === selectedBranchCode);
   }, [selectedBranchCode]);
+
+  const topN = selectedBranchCode === 'class-B.1' ? 2 : (selectedBranchCode.startsWith('class-') ? 3 : 5);
 
   const currentData = useMemo(() => {
     if (selectedBranchCode === 'all') return areaTotal;
@@ -157,7 +159,7 @@ export function FundingDashboard() {
     }
 
     let sourceBranches = fundingBranches;
-    if (selectedBranchCode.startsWith('class-')) {
+    if (selectedBranchCode !== 'all' && selectedBranchCode.startsWith('class-')) {
       const cls = selectedBranchCode.replace('class-', '');
       sourceBranches = fundingBranches.filter(b => b.class === cls);
     }
@@ -178,7 +180,7 @@ export function FundingDashboard() {
     let result: any[] = [];
     
     if (chartView === 'top') {
-      result = sorted.slice(0, 5).map(b => {
+      result = sorted.slice(0, topN).map(b => {
         let val = 0;
         if (chartDataType === 'lagging') {
           val = b.lagging[chartProduct as keyof typeof b.lagging][chartMetric as 'today' | 'percentTarget'];
@@ -192,7 +194,7 @@ export function FundingDashboard() {
         };
       });
     } else if (chartView === 'bottom') {
-      result = sorted.slice(-5).reverse().map(b => {
+      result = sorted.slice(-topN).reverse().map(b => {
         let val = 0;
         if (chartDataType === 'lagging') {
           val = b.lagging[chartProduct as keyof typeof b.lagging][chartMetric as 'today' | 'percentTarget'];
@@ -206,7 +208,7 @@ export function FundingDashboard() {
         };
       });
     } else {
-      const top5 = sorted.slice(0, 5).map(b => {
+      const topData = sorted.slice(0, topN).map(b => {
         let val = 0;
         if (chartDataType === 'lagging') {
           val = b.lagging[chartProduct as keyof typeof b.lagging][chartMetric as 'today' | 'percentTarget'];
@@ -220,7 +222,7 @@ export function FundingDashboard() {
           fill: '#003D79'
         };
       });
-      const bottom5 = sorted.slice(-5).reverse().map(b => {
+      const bottomData = sorted.slice(-topN).map(b => {
         let val = 0;
         if (chartDataType === 'lagging') {
           val = b.lagging[chartProduct as keyof typeof b.lagging][chartMetric as 'today' | 'percentTarget'];
@@ -235,8 +237,8 @@ export function FundingDashboard() {
         };
       });
       
-      const combined = [...top5];
-      bottom5.forEach(b => {
+      const combined = [...topData];
+      bottomData.forEach(b => {
         if (!combined.find(c => c.code === b.code)) {
           combined.push(b);
         }
@@ -318,7 +320,7 @@ export function FundingDashboard() {
       });
     }
     return sortableItems;
-  }, [fundingBranches, sortConfig, activeTab, laggingPortfolio]);
+  }, [filteredBranches, sortConfig, activeTab, laggingPortfolio]);
 
   const SortIcon = ({ columnKey }: { columnKey: string }) => {
     if (sortConfig?.key !== columnKey) {
@@ -353,6 +355,7 @@ export function FundingDashboard() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h2 className="text-2xl font-bold text-[#003D79]">Funding</h2>
+            <p className="text-xs text-slate-500 italic mt-1">{positionDateTexts.funding}</p>
           </div>
           
           <div className="flex items-center gap-3 bg-white p-2 rounded-lg shadow-sm border border-slate-200">
@@ -363,7 +366,7 @@ export function FundingDashboard() {
               onChange={(e) => {
                 const val = e.target.value;
                 setSelectedBranchCode(val);
-                if (val !== 'all') {
+                if (val !== 'all' && !val.startsWith('class-')) {
                   setChartProduct('all');
                 } else if (chartProduct === 'all') {
                   setChartProduct(chartDataType === 'lagging' ? 'tabungan' : 'newCifTabungan');
@@ -440,12 +443,23 @@ export function FundingDashboard() {
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                 <h3 className="text-lg font-bold text-slate-800">
                   {selectedBranchCode === 'all' || selectedBranchCode.startsWith('class-')
-                    ? `${chartView === 'top' ? 'Top 5' : chartView === 'bottom' ? 'Bottom 5' : 'Top & Bottom 5'} Cabang` 
+                    ? `${chartView === 'top' ? `Top ${topN}` : chartView === 'bottom' ? `Bottom ${topN}` : `Top & Bottom ${topN}`} Cabang` 
                     : `Komposisi ${getTableTitle()}`}
                 </h3>
                 
                 {/* Filters */}
                 <div className="flex flex-wrap gap-2">
+                  {selectedBranchCode === 'all' || selectedBranchCode.startsWith('class-') ? (
+                    <select 
+                      className="bg-slate-50 border border-slate-200 text-sm rounded-md py-1 px-2 outline-none focus:ring-2 focus:ring-[#003D79]"
+                      value={chartView}
+                      onChange={(e) => setChartView(e.target.value as 'top' | 'bottom' | 'both')}
+                    >
+                      <option value="top">Top {topN}</option>
+                      <option value="bottom">Bottom {topN}</option>
+                      <option value="both">Top & Bottom {topN}</option>
+                    </select>
+                  ) : null}
                   <select 
                     className="bg-slate-50 border border-slate-200 text-sm rounded-md py-1 px-2 outline-none focus:ring-2 focus:ring-[#003D79]"
                     value={chartDataType}
@@ -491,18 +505,6 @@ export function FundingDashboard() {
                     <option value="today">Realisasi Harian</option>
                     <option value="percentTarget">% Thd Target</option>
                   </select>
-                  
-                  {selectedBranchCode === 'all' || selectedBranchCode.startsWith('class-') ? (
-                    <select 
-                      className="bg-slate-50 border border-slate-200 text-sm rounded-md py-1 px-2 outline-none focus:ring-2 focus:ring-[#003D79]"
-                      value={chartView}
-                      onChange={(e) => setChartView(e.target.value as 'top' | 'bottom' | 'both')}
-                    >
-                      <option value="top">Top 5</option>
-                      <option value="bottom">Bottom 5</option>
-                      <option value="both">Top & Bottom 5</option>
-                    </select>
-                  ) : null}
                 </div>
               </div>
               <div className="h-80">

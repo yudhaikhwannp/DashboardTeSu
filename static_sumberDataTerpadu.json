@@ -1,0 +1,4943 @@
+[
+  {
+    "code": "12400",
+    "class": "B.1",
+    "name": "Jakarta Casablanca",
+    "bpa": {
+      "cm": 12.5,
+      "nii": 8.2,
+      "assetSpread": 3.1,
+      "liabilitiesSpread": 2.8,
+      "fbi": 4.5
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 103.77,
+          "wtd": -1.87,
+          "mtd": 1.34,
+          "ytd": -6.53,
+          "yoy": -12.64,
+          "target": 116.21,
+          "percentTarget": 89.3
+        },
+        "giro": {
+          "today": 155.67,
+          "wtd": -1.95,
+          "mtd": -6.03,
+          "ytd": -4.19,
+          "yoy": -9.54,
+          "target": 177.92,
+          "percentTarget": 87.49
+        },
+        "deposito": {
+          "today": 269.1,
+          "wtd": 3.11,
+          "mtd": 2.57,
+          "ytd": 1.8,
+          "yoy": -5.31,
+          "target": 300.72,
+          "percentTarget": 89.49
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 86,
+          "target": 80,
+          "percentTarget": 107.5
+        },
+        "newCifGiro": {
+          "today": 20,
+          "target": 21,
+          "percentTarget": 95.24
+        },
+        "newCifTabunganBisnis": {
+          "today": 8,
+          "target": 9,
+          "percentTarget": 88.89
+        },
+        "newToPriority": {
+          "today": 6,
+          "target": 6,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1754.27,
+          "wtd": -0.34,
+          "mtd": 4.4,
+          "ytd": 8.79,
+          "yoy": 38.16,
+          "target": 1846.17,
+          "percentTarget": 95.02
+        },
+        "cl": {
+          "today": 1076.85,
+          "wtd": 2.25,
+          "mtd": 2.06,
+          "ytd": 8.1,
+          "yoy": 72.19,
+          "target": 1126.54,
+          "percentTarget": 95.59
+        },
+        "ksm": {
+          "today": 714.28,
+          "wtd": 2.16,
+          "mtd": 7.06,
+          "ytd": 0.41,
+          "yoy": 58.96,
+          "target": 745.48,
+          "percentTarget": 95.81
+        },
+        "cc": {
+          "today": 527.89,
+          "wtd": -1.25,
+          "mtd": 1.25,
+          "ytd": 24.14,
+          "yoy": 62.08,
+          "target": 535.8,
+          "percentTarget": 98.52
+        },
+        "micro": {
+          "today": 357.66,
+          "wtd": -0.33,
+          "mtd": 0.16,
+          "ytd": 22.43,
+          "yoy": 18.27,
+          "target": 381.86,
+          "percentTarget": 93.66
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 43,
+          "target": 43,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 63,
+          "target": 72,
+          "percentTarget": 87.5
+        },
+        "bookingKSM": {
+          "today": 66,
+          "target": 70,
+          "percentTarget": 94.29
+        },
+        "bookingCC": {
+          "today": 184,
+          "target": 186,
+          "percentTarget": 98.92
+        },
+        "bookingMicro": {
+          "today": 105,
+          "target": 123,
+          "percentTarget": 85.37
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 19,
+        "target": 18,
+        "percentTarget": 105.56
+      },
+      "turunan": {
+        "today": 70,
+        "target": 83,
+        "percentTarget": 84.34
+      },
+      "familyTree": {
+        "today": 14,
+        "target": 13,
+        "percentTarget": 107.69
+      },
+      "warungViral": {
+        "today": 294,
+        "target": 246,
+        "percentTarget": 119.51
+      },
+      "spbu": {
+        "today": 4,
+        "target": 4,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 40,
+        "target": 43,
+        "percentTarget": 93.02
+      },
+      "sppg": {
+        "today": 11,
+        "target": 13,
+        "percentTarget": 84.62
+      },
+      "billReminder": {
+        "today": 362,
+        "target": 311,
+        "percentTarget": 116.4
+      }
+    }
+  },
+  {
+    "code": "12402",
+    "class": "B.1",
+    "name": "Jakarta Graha Irama",
+    "bpa": {
+      "cm": 10.2,
+      "nii": 7.1,
+      "assetSpread": 2.5,
+      "liabilitiesSpread": 2.1,
+      "fbi": 3.2
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 114.04,
+          "wtd": 2.92,
+          "mtd": 4.38,
+          "ytd": 1.59,
+          "yoy": -10.95,
+          "target": 115.45,
+          "percentTarget": 98.78
+        },
+        "giro": {
+          "today": 182.02,
+          "wtd": -3.36,
+          "mtd": -2.83,
+          "ytd": 12.17,
+          "yoy": 23.57,
+          "target": 166.17,
+          "percentTarget": 109.54
+        },
+        "deposito": {
+          "today": 228.99,
+          "wtd": -1.96,
+          "mtd": -7.03,
+          "ytd": 20.77,
+          "yoy": -30.65,
+          "target": 268.1,
+          "percentTarget": 85.41
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 91,
+          "target": 91,
+          "percentTarget": 100
+        },
+        "newCifGiro": {
+          "today": 15,
+          "target": 16,
+          "percentTarget": 93.75
+        },
+        "newCifTabunganBisnis": {
+          "today": 9,
+          "target": 9,
+          "percentTarget": 100
+        },
+        "newToPriority": {
+          "today": 8,
+          "target": 8,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1634.29,
+          "wtd": -0.94,
+          "mtd": 8.06,
+          "ytd": 25.76,
+          "yoy": 72.46,
+          "target": 1790.03,
+          "percentTarget": 91.3
+        },
+        "cl": {
+          "today": 1026.51,
+          "wtd": -1.72,
+          "mtd": 6.71,
+          "ytd": 1.81,
+          "yoy": 12.58,
+          "target": 1102.29,
+          "percentTarget": 93.12
+        },
+        "ksm": {
+          "today": 645.31,
+          "wtd": 2.41,
+          "mtd": 2.51,
+          "ytd": -6.02,
+          "yoy": -10.26,
+          "target": 672.95,
+          "percentTarget": 95.89
+        },
+        "cc": {
+          "today": 522.09,
+          "wtd": 2.1,
+          "mtd": -1.8,
+          "ytd": 31.58,
+          "yoy": 56.75,
+          "target": 570.05,
+          "percentTarget": 91.59
+        },
+        "micro": {
+          "today": 329.02,
+          "wtd": 2.15,
+          "mtd": 0.89,
+          "ytd": -8.71,
+          "yoy": 13.92,
+          "target": 358.83,
+          "percentTarget": 91.69
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 40,
+          "target": 47,
+          "percentTarget": 85.11
+        },
+        "bookingCL": {
+          "today": 53,
+          "target": 58,
+          "percentTarget": 91.38
+        },
+        "bookingKSM": {
+          "today": 79,
+          "target": 88,
+          "percentTarget": 89.77
+        },
+        "bookingCC": {
+          "today": 164,
+          "target": 196,
+          "percentTarget": 83.67
+        },
+        "bookingMicro": {
+          "today": 92,
+          "target": 105,
+          "percentTarget": 87.62
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 18,
+        "target": 20,
+        "percentTarget": 90
+      },
+      "turunan": {
+        "today": 27,
+        "target": 23,
+        "percentTarget": 117.39
+      },
+      "familyTree": {
+        "today": 35,
+        "target": 31,
+        "percentTarget": 112.9
+      },
+      "warungViral": {
+        "today": 74,
+        "target": 83,
+        "percentTarget": 89.16
+      },
+      "spbu": {
+        "today": 9,
+        "target": 10,
+        "percentTarget": 90
+      },
+      "kdkmp": {
+        "today": 12,
+        "target": 12,
+        "percentTarget": 100
+      },
+      "sppg": {
+        "today": 39,
+        "target": 40,
+        "percentTarget": 97.5
+      },
+      "billReminder": {
+        "today": 258,
+        "target": 254,
+        "percentTarget": 101.57
+      }
+    }
+  },
+  {
+    "code": "12403",
+    "class": "B.1",
+    "name": "Jakarta Kuningan",
+    "bpa": {
+      "cm": 15.8,
+      "nii": 10.5,
+      "assetSpread": 4.2,
+      "liabilitiesSpread": 3.5,
+      "fbi": 5.1
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 129.33,
+          "wtd": 0.01,
+          "mtd": 2.73,
+          "ytd": 3.1,
+          "yoy": -4.82,
+          "target": 123.01,
+          "percentTarget": 105.14
+        },
+        "giro": {
+          "today": 249.7,
+          "wtd": -3.65,
+          "mtd": -1.58,
+          "ytd": 9.39,
+          "yoy": -10.82,
+          "target": 297.78,
+          "percentTarget": 83.86
+        },
+        "deposito": {
+          "today": 345.36,
+          "wtd": 7.68,
+          "mtd": -0.09,
+          "ytd": -14.45,
+          "yoy": -50.07,
+          "target": 340.33,
+          "percentTarget": 101.48
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 105,
+          "target": 117,
+          "percentTarget": 89.74
+        },
+        "newCifGiro": {
+          "today": 21,
+          "target": 23,
+          "percentTarget": 91.3
+        },
+        "newCifTabunganBisnis": {
+          "today": 18,
+          "target": 17,
+          "percentTarget": 105.88
+        },
+        "newToPriority": {
+          "today": 4,
+          "target": 5,
+          "percentTarget": 80
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1588,
+          "wtd": 2.4,
+          "mtd": 1.23,
+          "ytd": 4.85,
+          "yoy": 15.01,
+          "target": 1651.57,
+          "percentTarget": 96.15
+        },
+        "cl": {
+          "today": 1048.22,
+          "wtd": 0.65,
+          "mtd": -4.23,
+          "ytd": 17.89,
+          "yoy": 71.53,
+          "target": 1147.58,
+          "percentTarget": 91.34
+        },
+        "ksm": {
+          "today": 715.2,
+          "wtd": -0.79,
+          "mtd": 3.54,
+          "ytd": 26.55,
+          "yoy": -1.85,
+          "target": 764.79,
+          "percentTarget": 93.52
+        },
+        "cc": {
+          "today": 478.68,
+          "wtd": 0.15,
+          "mtd": 6.7,
+          "ytd": 30.48,
+          "yoy": 78.34,
+          "target": 525.48,
+          "percentTarget": 91.09
+        },
+        "micro": {
+          "today": 315.19,
+          "wtd": 1.83,
+          "mtd": -3.54,
+          "ytd": 6.55,
+          "yoy": 38.32,
+          "target": 333.67,
+          "percentTarget": 94.46
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 32,
+          "target": 37,
+          "percentTarget": 86.49
+        },
+        "bookingCL": {
+          "today": 58,
+          "target": 58,
+          "percentTarget": 100
+        },
+        "bookingKSM": {
+          "today": 72,
+          "target": 79,
+          "percentTarget": 91.14
+        },
+        "bookingCC": {
+          "today": 211,
+          "target": 236,
+          "percentTarget": 89.41
+        },
+        "bookingMicro": {
+          "today": 93,
+          "target": 105,
+          "percentTarget": 88.57
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 22,
+        "target": 26,
+        "percentTarget": 84.62
+      },
+      "turunan": {
+        "today": 58,
+        "target": 49,
+        "percentTarget": 118.37
+      },
+      "familyTree": {
+        "today": 7,
+        "target": 8,
+        "percentTarget": 87.5
+      },
+      "warungViral": {
+        "today": 101,
+        "target": 104,
+        "percentTarget": 97.12
+      },
+      "spbu": {
+        "today": 4,
+        "target": 4,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 43,
+        "target": 44,
+        "percentTarget": 97.73
+      },
+      "sppg": {
+        "today": 43,
+        "target": 41,
+        "percentTarget": 104.88
+      },
+      "billReminder": {
+        "today": 417,
+        "target": 357,
+        "percentTarget": 116.81
+      }
+    }
+  },
+  {
+    "code": "12422",
+    "class": "B.1",
+    "name": "Jakarta M.T. Haryono",
+    "bpa": {
+      "cm": 11.4,
+      "nii": 7.8,
+      "assetSpread": 2.9,
+      "liabilitiesSpread": 2.4,
+      "fbi": 3.8
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 114.6,
+          "wtd": 0.94,
+          "mtd": -1.94,
+          "ytd": -3.88,
+          "yoy": 1.18,
+          "target": 115.36,
+          "percentTarget": 99.34
+        },
+        "giro": {
+          "today": 139.37,
+          "wtd": -1.32,
+          "mtd": 0.21,
+          "ytd": 7.25,
+          "yoy": -19.39,
+          "target": 167.14,
+          "percentTarget": 83.38
+        },
+        "deposito": {
+          "today": 190.15,
+          "wtd": 2.36,
+          "mtd": -7.48,
+          "ytd": -9.81,
+          "yoy": -8.53,
+          "target": 224.56,
+          "percentTarget": 84.68
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 89,
+          "target": 84,
+          "percentTarget": 105.95
+        },
+        "newCifGiro": {
+          "today": 13,
+          "target": 12,
+          "percentTarget": 108.33
+        },
+        "newCifTabunganBisnis": {
+          "today": 35,
+          "target": 39,
+          "percentTarget": 89.74
+        },
+        "newToPriority": {
+          "today": 5,
+          "target": 6,
+          "percentTarget": 83.33
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1547.5,
+          "wtd": 0.87,
+          "mtd": 1.78,
+          "ytd": 19.08,
+          "yoy": 31.74,
+          "target": 1626.39,
+          "percentTarget": 95.15
+        },
+        "cl": {
+          "today": 1010.83,
+          "wtd": 2.44,
+          "mtd": -4.56,
+          "ytd": 30.79,
+          "yoy": 54.23,
+          "target": 1041.04,
+          "percentTarget": 97.1
+        },
+        "ksm": {
+          "today": 650.21,
+          "wtd": -0.32,
+          "mtd": 4.63,
+          "ytd": 3.23,
+          "yoy": -17.27,
+          "target": 670.89,
+          "percentTarget": 96.92
+        },
+        "cc": {
+          "today": 517.29,
+          "wtd": 0.26,
+          "mtd": 2.2,
+          "ytd": 19.17,
+          "yoy": -7.2,
+          "target": 527.42,
+          "percentTarget": 98.08
+        },
+        "micro": {
+          "today": 340.67,
+          "wtd": 1.69,
+          "mtd": 8.03,
+          "ytd": 39.56,
+          "yoy": 56.52,
+          "target": 342.48,
+          "percentTarget": 99.47
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 31,
+          "target": 33,
+          "percentTarget": 93.94
+        },
+        "bookingCL": {
+          "today": 62,
+          "target": 63,
+          "percentTarget": 98.41
+        },
+        "bookingKSM": {
+          "today": 85,
+          "target": 98,
+          "percentTarget": 86.73
+        },
+        "bookingCC": {
+          "today": 195,
+          "target": 203,
+          "percentTarget": 96.06
+        },
+        "bookingMicro": {
+          "today": 91,
+          "target": 104,
+          "percentTarget": 87.5
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 32,
+        "target": 31,
+        "percentTarget": 103.23
+      },
+      "turunan": {
+        "today": 108,
+        "target": 116,
+        "percentTarget": 93.1
+      },
+      "familyTree": {
+        "today": 14,
+        "target": 15,
+        "percentTarget": 93.33
+      },
+      "warungViral": {
+        "today": 156,
+        "target": 181,
+        "percentTarget": 86.19
+      },
+      "spbu": {
+        "today": 7,
+        "target": 7,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 12,
+        "target": 10,
+        "percentTarget": 120
+      },
+      "sppg": {
+        "today": 41,
+        "target": 38,
+        "percentTarget": 107.89
+      },
+      "billReminder": {
+        "today": 191,
+        "target": 164,
+        "percentTarget": 116.46
+      }
+    }
+  },
+  {
+    "code": "12401",
+    "class": "B.2",
+    "name": "Jakarta Rasuna Said",
+    "bpa": {
+      "cm": 9.5,
+      "nii": 6.2,
+      "assetSpread": 2.1,
+      "liabilitiesSpread": 1.8,
+      "fbi": 2.9
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 100.73,
+          "wtd": 0.6,
+          "mtd": -4.6,
+          "ytd": 6.85,
+          "yoy": 13.81,
+          "target": 101.91,
+          "percentTarget": 98.84
+        },
+        "giro": {
+          "today": 146.85,
+          "wtd": 2.82,
+          "mtd": -4.69,
+          "ytd": -2.4,
+          "yoy": 0,
+          "target": 161.62,
+          "percentTarget": 90.86
+        },
+        "deposito": {
+          "today": 162.65,
+          "wtd": 4.51,
+          "mtd": 1.3,
+          "ytd": -10.57,
+          "yoy": 7.4,
+          "target": 152.7,
+          "percentTarget": 106.52
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 65,
+          "target": 65,
+          "percentTarget": 100
+        },
+        "newCifGiro": {
+          "today": 14,
+          "target": 14,
+          "percentTarget": 100
+        },
+        "newCifTabunganBisnis": {
+          "today": 21,
+          "target": 22,
+          "percentTarget": 95.45
+        },
+        "newToPriority": {
+          "today": 5,
+          "target": 6,
+          "percentTarget": 83.33
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1023.88,
+          "wtd": -1.22,
+          "mtd": 9.35,
+          "ytd": 38.73,
+          "yoy": -6.5,
+          "target": 1057.85,
+          "percentTarget": 96.79
+        },
+        "cl": {
+          "today": 626.83,
+          "wtd": 1.44,
+          "mtd": -3.83,
+          "ytd": 39.78,
+          "yoy": 15.4,
+          "target": 652.68,
+          "percentTarget": 96.04
+        },
+        "ksm": {
+          "today": 473.87,
+          "wtd": 1.11,
+          "mtd": 2.59,
+          "ytd": 17.6,
+          "yoy": 48.7,
+          "target": 477.89,
+          "percentTarget": 99.16
+        },
+        "cc": {
+          "today": 303.41,
+          "wtd": 0.08,
+          "mtd": 5.09,
+          "ytd": 24.82,
+          "yoy": -9.83,
+          "target": 307.61,
+          "percentTarget": 98.64
+        },
+        "micro": {
+          "today": 224.43,
+          "wtd": -1.89,
+          "mtd": 9.71,
+          "ytd": -2.97,
+          "yoy": 5.6,
+          "target": 238.59,
+          "percentTarget": 94.06
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 27,
+          "target": 28,
+          "percentTarget": 96.43
+        },
+        "bookingCL": {
+          "today": 39,
+          "target": 40,
+          "percentTarget": 97.5
+        },
+        "bookingKSM": {
+          "today": 56,
+          "target": 60,
+          "percentTarget": 93.33
+        },
+        "bookingCC": {
+          "today": 100,
+          "target": 110,
+          "percentTarget": 90.91
+        },
+        "bookingMicro": {
+          "today": 83,
+          "target": 89,
+          "percentTarget": 93.26
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 14,
+        "target": 17,
+        "percentTarget": 82.35
+      },
+      "turunan": {
+        "today": 61,
+        "target": 75,
+        "percentTarget": 81.33
+      },
+      "familyTree": {
+        "today": 32,
+        "target": 31,
+        "percentTarget": 103.23
+      },
+      "warungViral": {
+        "today": 157,
+        "target": 189,
+        "percentTarget": 83.07
+      },
+      "spbu": {
+        "today": 4,
+        "target": 5,
+        "percentTarget": 80
+      },
+      "kdkmp": {
+        "today": 22,
+        "target": 27,
+        "percentTarget": 81.48
+      },
+      "sppg": {
+        "today": 30,
+        "target": 34,
+        "percentTarget": 88.24
+      },
+      "billReminder": {
+        "today": 299,
+        "target": 333,
+        "percentTarget": 89.79
+      }
+    }
+  },
+  {
+    "code": "12404",
+    "class": "B.2",
+    "name": "Jakarta Tebet Supomo",
+    "bpa": {
+      "cm": 8.7,
+      "nii": 5.8,
+      "assetSpread": 1.9,
+      "liabilitiesSpread": 1.6,
+      "fbi": 2.5
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 82.06,
+          "wtd": 1.01,
+          "mtd": 1.91,
+          "ytd": -0.42,
+          "yoy": -5.51,
+          "target": 98.03,
+          "percentTarget": 83.7
+        },
+        "giro": {
+          "today": 143.7,
+          "wtd": 1.79,
+          "mtd": -0.14,
+          "ytd": 2.13,
+          "yoy": 21.31,
+          "target": 146.45,
+          "percentTarget": 98.12
+        },
+        "deposito": {
+          "today": 185.09,
+          "wtd": 3.78,
+          "mtd": 6.63,
+          "ytd": -1.6,
+          "yoy": -23.17,
+          "target": 215.47,
+          "percentTarget": 85.9
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 22,
+          "target": 21,
+          "percentTarget": 104.76
+        },
+        "newCifGiro": {
+          "today": 6,
+          "target": 7,
+          "percentTarget": 85.71
+        },
+        "newCifTabunganBisnis": {
+          "today": 33,
+          "target": 31,
+          "percentTarget": 106.45
+        },
+        "newToPriority": {
+          "today": 11,
+          "target": 11,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1087.04,
+          "wtd": 1.18,
+          "mtd": 3.43,
+          "ytd": 14.43,
+          "yoy": 17.51,
+          "target": 1108.33,
+          "percentTarget": 98.08
+        },
+        "cl": {
+          "today": 654.37,
+          "wtd": -1.42,
+          "mtd": 2.4,
+          "ytd": 33.77,
+          "yoy": 21.5,
+          "target": 705.23,
+          "percentTarget": 92.79
+        },
+        "ksm": {
+          "today": 439.89,
+          "wtd": -0.26,
+          "mtd": -4.28,
+          "ytd": 25.33,
+          "yoy": 79.61,
+          "target": 453,
+          "percentTarget": 97.1
+        },
+        "cc": {
+          "today": 336.8,
+          "wtd": 0.31,
+          "mtd": 4.5,
+          "ytd": 10.11,
+          "yoy": 29.74,
+          "target": 342.39,
+          "percentTarget": 98.37
+        },
+        "micro": {
+          "today": 239.86,
+          "wtd": 1.3,
+          "mtd": 8.62,
+          "ytd": 23.19,
+          "yoy": -0.47,
+          "target": 247.1,
+          "percentTarget": 97.07
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 27,
+          "target": 28,
+          "percentTarget": 96.43
+        },
+        "bookingCL": {
+          "today": 38,
+          "target": 41,
+          "percentTarget": 92.68
+        },
+        "bookingKSM": {
+          "today": 49,
+          "target": 58,
+          "percentTarget": 84.48
+        },
+        "bookingCC": {
+          "today": 131,
+          "target": 149,
+          "percentTarget": 87.92
+        },
+        "bookingMicro": {
+          "today": 70,
+          "target": 75,
+          "percentTarget": 93.33
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 22,
+        "target": 20,
+        "percentTarget": 110
+      },
+      "turunan": {
+        "today": 64,
+        "target": 68,
+        "percentTarget": 94.12
+      },
+      "familyTree": {
+        "today": 16,
+        "target": 20,
+        "percentTarget": 80
+      },
+      "warungViral": {
+        "today": 50,
+        "target": 59,
+        "percentTarget": 84.75
+      },
+      "spbu": {
+        "today": 9,
+        "target": 8,
+        "percentTarget": 112.5
+      },
+      "kdkmp": {
+        "today": 41,
+        "target": 39,
+        "percentTarget": 105.13
+      },
+      "sppg": {
+        "today": 49,
+        "target": 55,
+        "percentTarget": 89.09
+      },
+      "billReminder": {
+        "today": 303,
+        "target": 299,
+        "percentTarget": 101.34
+      }
+    }
+  },
+  {
+    "code": "12405",
+    "class": "B.2",
+    "name": "Jakarta Plaza Setiabudi",
+    "bpa": {
+      "cm": 9.1,
+      "nii": 6,
+      "assetSpread": 2,
+      "liabilitiesSpread": 1.7,
+      "fbi": 2.7
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 83.86,
+          "wtd": -1.54,
+          "mtd": 3.57,
+          "ytd": -2.22,
+          "yoy": 0.96,
+          "target": 79.24,
+          "percentTarget": 105.83
+        },
+        "giro": {
+          "today": 147.6,
+          "wtd": 2.62,
+          "mtd": -4.86,
+          "ytd": -4.96,
+          "yoy": -13.99,
+          "target": 133.63,
+          "percentTarget": 110.45
+        },
+        "deposito": {
+          "today": 203.11,
+          "wtd": -3.25,
+          "mtd": -2.31,
+          "ytd": 15.07,
+          "yoy": -8.42,
+          "target": 205.94,
+          "percentTarget": 98.62
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 51,
+          "target": 48,
+          "percentTarget": 106.25
+        },
+        "newCifGiro": {
+          "today": 10,
+          "target": 11,
+          "percentTarget": 90.91
+        },
+        "newCifTabunganBisnis": {
+          "today": 29,
+          "target": 30,
+          "percentTarget": 96.67
+        },
+        "newToPriority": {
+          "today": 10,
+          "target": 11,
+          "percentTarget": 90.91
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1004.32,
+          "wtd": 1.5,
+          "mtd": 9.08,
+          "ytd": -6.68,
+          "yoy": 21.34,
+          "target": 1091.71,
+          "percentTarget": 92
+        },
+        "cl": {
+          "today": 657.65,
+          "wtd": 2.38,
+          "mtd": 8.56,
+          "ytd": 1.17,
+          "yoy": 11.96,
+          "target": 667.18,
+          "percentTarget": 98.57
+        },
+        "ksm": {
+          "today": 435.98,
+          "wtd": 0.77,
+          "mtd": 4.49,
+          "ytd": 5.54,
+          "yoy": 36.23,
+          "target": 444.55,
+          "percentTarget": 98.07
+        },
+        "cc": {
+          "today": 319.33,
+          "wtd": -0.01,
+          "mtd": -2.96,
+          "ytd": 35.91,
+          "yoy": 26.39,
+          "target": 329.93,
+          "percentTarget": 96.79
+        },
+        "micro": {
+          "today": 235.49,
+          "wtd": 2.39,
+          "mtd": 6.6,
+          "ytd": 2.03,
+          "yoy": 5.38,
+          "target": 240.44,
+          "percentTarget": 97.94
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 22,
+          "target": 24,
+          "percentTarget": 91.67
+        },
+        "bookingCL": {
+          "today": 33,
+          "target": 37,
+          "percentTarget": 89.19
+        },
+        "bookingKSM": {
+          "today": 59,
+          "target": 61,
+          "percentTarget": 96.72
+        },
+        "bookingCC": {
+          "today": 129,
+          "target": 138,
+          "percentTarget": 93.48
+        },
+        "bookingMicro": {
+          "today": 71,
+          "target": 71,
+          "percentTarget": 100
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 34,
+        "target": 40,
+        "percentTarget": 85
+      },
+      "turunan": {
+        "today": 29,
+        "target": 28,
+        "percentTarget": 103.57
+      },
+      "familyTree": {
+        "today": 24,
+        "target": 20,
+        "percentTarget": 120
+      },
+      "warungViral": {
+        "today": 233,
+        "target": 206,
+        "percentTarget": 113.11
+      },
+      "spbu": {
+        "today": 4,
+        "target": 3,
+        "percentTarget": 133.33
+      },
+      "kdkmp": {
+        "today": 18,
+        "target": 22,
+        "percentTarget": 81.82
+      },
+      "sppg": {
+        "today": 52,
+        "target": 44,
+        "percentTarget": 118.18
+      },
+      "billReminder": {
+        "today": 223,
+        "target": 273,
+        "percentTarget": 81.68
+      }
+    }
+  },
+  {
+    "code": "12408",
+    "class": "B.2",
+    "name": "Jakarta Saharjo",
+    "bpa": {
+      "cm": 7.8,
+      "nii": 5.1,
+      "assetSpread": 1.7,
+      "liabilitiesSpread": 1.4,
+      "fbi": 2.2
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 90.66,
+          "wtd": -1.54,
+          "mtd": 4.19,
+          "ytd": -0.21,
+          "yoy": 1.55,
+          "target": 104.09,
+          "percentTarget": 87.1
+        },
+        "giro": {
+          "today": 108.45,
+          "wtd": -1,
+          "mtd": -0.85,
+          "ytd": 6.92,
+          "yoy": -15.84,
+          "target": 102.14,
+          "percentTarget": 106.18
+        },
+        "deposito": {
+          "today": 139,
+          "wtd": -1.07,
+          "mtd": 1.4,
+          "ytd": 4.84,
+          "yoy": 8.02,
+          "target": 156.06,
+          "percentTarget": 89.07
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 81,
+          "target": 94,
+          "percentTarget": 86.17
+        },
+        "newCifGiro": {
+          "today": 4,
+          "target": 5,
+          "percentTarget": 80
+        },
+        "newCifTabunganBisnis": {
+          "today": 9,
+          "target": 10,
+          "percentTarget": 90
+        },
+        "newToPriority": {
+          "today": 8,
+          "target": 9,
+          "percentTarget": 88.89
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1169.88,
+          "wtd": -0.1,
+          "mtd": 2.4,
+          "ytd": 19.67,
+          "yoy": 65.63,
+          "target": 1218.23,
+          "percentTarget": 96.03
+        },
+        "cl": {
+          "today": 667.54,
+          "wtd": 0.11,
+          "mtd": -4.2,
+          "ytd": 19.69,
+          "yoy": -0.99,
+          "target": 729.97,
+          "percentTarget": 91.45
+        },
+        "ksm": {
+          "today": 475.44,
+          "wtd": 1.7,
+          "mtd": 8.33,
+          "ytd": 27.08,
+          "yoy": 24.61,
+          "target": 480.72,
+          "percentTarget": 98.9
+        },
+        "cc": {
+          "today": 333.04,
+          "wtd": -1.22,
+          "mtd": -0.95,
+          "ytd": 1,
+          "yoy": 4.95,
+          "target": 366.19,
+          "percentTarget": 90.95
+        },
+        "micro": {
+          "today": 222.57,
+          "wtd": -1.79,
+          "mtd": -4.43,
+          "ytd": -2.54,
+          "yoy": 46,
+          "target": 229.91,
+          "percentTarget": 96.81
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 21,
+          "target": 24,
+          "percentTarget": 87.5
+        },
+        "bookingCL": {
+          "today": 37,
+          "target": 41,
+          "percentTarget": 90.24
+        },
+        "bookingKSM": {
+          "today": 50,
+          "target": 59,
+          "percentTarget": 84.75
+        },
+        "bookingCC": {
+          "today": 120,
+          "target": 142,
+          "percentTarget": 84.51
+        },
+        "bookingMicro": {
+          "today": 82,
+          "target": 84,
+          "percentTarget": 97.62
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 21,
+        "target": 25,
+        "percentTarget": 84
+      },
+      "turunan": {
+        "today": 26,
+        "target": 28,
+        "percentTarget": 92.86
+      },
+      "familyTree": {
+        "today": 19,
+        "target": 17,
+        "percentTarget": 111.76
+      },
+      "warungViral": {
+        "today": 157,
+        "target": 140,
+        "percentTarget": 112.14
+      },
+      "spbu": {
+        "today": 9,
+        "target": 8,
+        "percentTarget": 112.5
+      },
+      "kdkmp": {
+        "today": 13,
+        "target": 16,
+        "percentTarget": 81.25
+      },
+      "sppg": {
+        "today": 16,
+        "target": 18,
+        "percentTarget": 88.89
+      },
+      "billReminder": {
+        "today": 255,
+        "target": 230,
+        "percentTarget": 110.87
+      }
+    }
+  },
+  {
+    "code": "12414",
+    "class": "B.2",
+    "name": "Jakarta Trinity Tower",
+    "bpa": {
+      "cm": 8.4,
+      "nii": 5.5,
+      "assetSpread": 1.8,
+      "liabilitiesSpread": 1.5,
+      "fbi": 2.4
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 97.94,
+          "wtd": -1.22,
+          "mtd": 4.49,
+          "ytd": -9.68,
+          "yoy": -4.26,
+          "target": 93.25,
+          "percentTarget": 105.03
+        },
+        "giro": {
+          "today": 123.73,
+          "wtd": -1.61,
+          "mtd": 2.29,
+          "ytd": 7.16,
+          "yoy": 7.71,
+          "target": 134.43,
+          "percentTarget": 92.04
+        },
+        "deposito": {
+          "today": 151.64,
+          "wtd": -2.24,
+          "mtd": 2.08,
+          "ytd": 10.95,
+          "yoy": -9.4,
+          "target": 168.31,
+          "percentTarget": 90.1
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 31,
+          "target": 28,
+          "percentTarget": 110.71
+        },
+        "newCifGiro": {
+          "today": 9,
+          "target": 9,
+          "percentTarget": 100
+        },
+        "newCifTabunganBisnis": {
+          "today": 32,
+          "target": 37,
+          "percentTarget": 86.49
+        },
+        "newToPriority": {
+          "today": 6,
+          "target": 7,
+          "percentTarget": 85.71
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1114.32,
+          "wtd": 0.06,
+          "mtd": -3.89,
+          "ytd": 35.63,
+          "yoy": 28.67,
+          "target": 1200.9,
+          "percentTarget": 92.79
+        },
+        "cl": {
+          "today": 656.94,
+          "wtd": 0.12,
+          "mtd": -4.11,
+          "ytd": 34.51,
+          "yoy": 74.44,
+          "target": 668.41,
+          "percentTarget": 98.28
+        },
+        "ksm": {
+          "today": 408.84,
+          "wtd": -0.42,
+          "mtd": 5.96,
+          "ytd": 0.41,
+          "yoy": -11.85,
+          "target": 427.1,
+          "percentTarget": 95.72
+        },
+        "cc": {
+          "today": 335.03,
+          "wtd": 2.96,
+          "mtd": 9.78,
+          "ytd": 26.59,
+          "yoy": -5.38,
+          "target": 355.09,
+          "percentTarget": 94.35
+        },
+        "micro": {
+          "today": 233.44,
+          "wtd": 2.87,
+          "mtd": -2.18,
+          "ytd": 12.7,
+          "yoy": 54.28,
+          "target": 246.23,
+          "percentTarget": 94.81
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 24,
+          "target": 27,
+          "percentTarget": 88.89
+        },
+        "bookingCL": {
+          "today": 43,
+          "target": 48,
+          "percentTarget": 89.58
+        },
+        "bookingKSM": {
+          "today": 51,
+          "target": 54,
+          "percentTarget": 94.44
+        },
+        "bookingCC": {
+          "today": 147,
+          "target": 165,
+          "percentTarget": 89.09
+        },
+        "bookingMicro": {
+          "today": 88,
+          "target": 95,
+          "percentTarget": 92.63
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 43,
+        "target": 46,
+        "percentTarget": 93.48
+      },
+      "turunan": {
+        "today": 114,
+        "target": 112,
+        "percentTarget": 101.79
+      },
+      "familyTree": {
+        "today": 7,
+        "target": 8,
+        "percentTarget": 87.5
+      },
+      "warungViral": {
+        "today": 246,
+        "target": 231,
+        "percentTarget": 106.49
+      },
+      "spbu": {
+        "today": 11,
+        "target": 11,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 18,
+        "target": 22,
+        "percentTarget": 81.82
+      },
+      "sppg": {
+        "today": 25,
+        "target": 28,
+        "percentTarget": 89.29
+      },
+      "billReminder": {
+        "today": 133,
+        "target": 135,
+        "percentTarget": 98.52
+      }
+    }
+  },
+  {
+    "code": "12417",
+    "class": "B.2",
+    "name": "Jakarta Kalibata",
+    "bpa": {
+      "cm": 7.2,
+      "nii": 4.8,
+      "assetSpread": 1.5,
+      "liabilitiesSpread": 1.3,
+      "fbi": 2
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 85.4,
+          "wtd": -0.25,
+          "mtd": -2.21,
+          "ytd": 8.36,
+          "yoy": -6.65,
+          "target": 94.21,
+          "percentTarget": 90.65
+        },
+        "giro": {
+          "today": 123.82,
+          "wtd": 1.94,
+          "mtd": 0.92,
+          "ytd": -10.43,
+          "yoy": -13.79,
+          "target": 124.86,
+          "percentTarget": 99.16
+        },
+        "deposito": {
+          "today": 168.18,
+          "wtd": -1.87,
+          "mtd": -3.5,
+          "ytd": -6.8,
+          "yoy": 14.68,
+          "target": 188.32,
+          "percentTarget": 89.31
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 89,
+          "target": 98,
+          "percentTarget": 90.82
+        },
+        "newCifGiro": {
+          "today": 14,
+          "target": 13,
+          "percentTarget": 107.69
+        },
+        "newCifTabunganBisnis": {
+          "today": 16,
+          "target": 19,
+          "percentTarget": 84.21
+        },
+        "newToPriority": {
+          "today": 10,
+          "target": 11,
+          "percentTarget": 90.91
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1028.91,
+          "wtd": -1.2,
+          "mtd": 7.7,
+          "ytd": 30.81,
+          "yoy": 23.78,
+          "target": 1062.06,
+          "percentTarget": 96.88
+        },
+        "cl": {
+          "today": 653.15,
+          "wtd": 2.59,
+          "mtd": 2.87,
+          "ytd": 12.2,
+          "yoy": -5.05,
+          "target": 665.79,
+          "percentTarget": 98.1
+        },
+        "ksm": {
+          "today": 431.64,
+          "wtd": 1.18,
+          "mtd": 8.4,
+          "ytd": 14.55,
+          "yoy": 11.79,
+          "target": 468.46,
+          "percentTarget": 92.14
+        },
+        "cc": {
+          "today": 334.02,
+          "wtd": -0.98,
+          "mtd": 9.23,
+          "ytd": 6.11,
+          "yoy": 70.23,
+          "target": 364.68,
+          "percentTarget": 91.59
+        },
+        "micro": {
+          "today": 220.08,
+          "wtd": 2.95,
+          "mtd": -4.89,
+          "ytd": -7.37,
+          "yoy": 34.22,
+          "target": 236.89,
+          "percentTarget": 92.9
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 25,
+          "target": 28,
+          "percentTarget": 89.29
+        },
+        "bookingCL": {
+          "today": 37,
+          "target": 38,
+          "percentTarget": 97.37
+        },
+        "bookingKSM": {
+          "today": 46,
+          "target": 47,
+          "percentTarget": 97.87
+        },
+        "bookingCC": {
+          "today": 115,
+          "target": 130,
+          "percentTarget": 88.46
+        },
+        "bookingMicro": {
+          "today": 71,
+          "target": 77,
+          "percentTarget": 92.21
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 37,
+        "target": 32,
+        "percentTarget": 115.63
+      },
+      "turunan": {
+        "today": 59,
+        "target": 67,
+        "percentTarget": 88.06
+      },
+      "familyTree": {
+        "today": 27,
+        "target": 25,
+        "percentTarget": 108
+      },
+      "warungViral": {
+        "today": 126,
+        "target": 126,
+        "percentTarget": 100
+      },
+      "spbu": {
+        "today": 4,
+        "target": 5,
+        "percentTarget": 80
+      },
+      "kdkmp": {
+        "today": 16,
+        "target": 20,
+        "percentTarget": 80
+      },
+      "sppg": {
+        "today": 64,
+        "target": 57,
+        "percentTarget": 112.28
+      },
+      "billReminder": {
+        "today": 410,
+        "target": 368,
+        "percentTarget": 111.41
+      }
+    }
+  },
+  {
+    "code": "12418",
+    "class": "B.2",
+    "name": "Jakarta Pasar Minggu",
+    "bpa": {
+      "cm": 8.9,
+      "nii": 5.9,
+      "assetSpread": 2,
+      "liabilitiesSpread": 1.6,
+      "fbi": 2.6
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 94.36,
+          "wtd": 2.18,
+          "mtd": -4.59,
+          "ytd": 3.54,
+          "yoy": 3.92,
+          "target": 101.76,
+          "percentTarget": 92.73
+        },
+        "giro": {
+          "today": 110.91,
+          "wtd": 3.08,
+          "mtd": 2.48,
+          "ytd": -0.82,
+          "yoy": 12.09,
+          "target": 118.62,
+          "percentTarget": 93.51
+        },
+        "deposito": {
+          "today": 156.94,
+          "wtd": -2.63,
+          "mtd": -6.25,
+          "ytd": -7.89,
+          "yoy": 9.32,
+          "target": 170.75,
+          "percentTarget": 91.91
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 88,
+          "target": 81,
+          "percentTarget": 108.64
+        },
+        "newCifGiro": {
+          "today": 21,
+          "target": 20,
+          "percentTarget": 105
+        },
+        "newCifTabunganBisnis": {
+          "today": 9,
+          "target": 10,
+          "percentTarget": 90
+        },
+        "newToPriority": {
+          "today": 4,
+          "target": 4,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1173.31,
+          "wtd": -1.56,
+          "mtd": 5.36,
+          "ytd": -0.64,
+          "yoy": 57.67,
+          "target": 1178.28,
+          "percentTarget": 99.58
+        },
+        "cl": {
+          "today": 685.49,
+          "wtd": 1.89,
+          "mtd": 1.52,
+          "ytd": 2.44,
+          "yoy": -0.61,
+          "target": 718.19,
+          "percentTarget": 95.45
+        },
+        "ksm": {
+          "today": 471.64,
+          "wtd": 2.94,
+          "mtd": 6.23,
+          "ytd": 9,
+          "yoy": 33,
+          "target": 492.56,
+          "percentTarget": 95.75
+        },
+        "cc": {
+          "today": 355.85,
+          "wtd": 2.73,
+          "mtd": -4.29,
+          "ytd": 33.96,
+          "yoy": 55.6,
+          "target": 363.42,
+          "percentTarget": 97.92
+        },
+        "micro": {
+          "today": 238.62,
+          "wtd": -1.61,
+          "mtd": -0.49,
+          "ytd": 18.98,
+          "yoy": 27.79,
+          "target": 257.08,
+          "percentTarget": 92.82
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 23,
+          "target": 27,
+          "percentTarget": 85.19
+        },
+        "bookingCL": {
+          "today": 32,
+          "target": 34,
+          "percentTarget": 94.12
+        },
+        "bookingKSM": {
+          "today": 55,
+          "target": 58,
+          "percentTarget": 94.83
+        },
+        "bookingCC": {
+          "today": 122,
+          "target": 141,
+          "percentTarget": 86.52
+        },
+        "bookingMicro": {
+          "today": 76,
+          "target": 82,
+          "percentTarget": 92.68
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 59,
+        "target": 55,
+        "percentTarget": 107.27
+      },
+      "turunan": {
+        "today": 42,
+        "target": 36,
+        "percentTarget": 116.67
+      },
+      "familyTree": {
+        "today": 25,
+        "target": 27,
+        "percentTarget": 92.59
+      },
+      "warungViral": {
+        "today": 129,
+        "target": 156,
+        "percentTarget": 82.69
+      },
+      "spbu": {
+        "today": 2,
+        "target": 2,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 37,
+        "target": 36,
+        "percentTarget": 102.78
+      },
+      "sppg": {
+        "today": 58,
+        "target": 52,
+        "percentTarget": 111.54
+      },
+      "billReminder": {
+        "today": 177,
+        "target": 191,
+        "percentTarget": 92.67
+      }
+    }
+  },
+  {
+    "code": "12423",
+    "class": "B.2",
+    "name": "Jakarta Pancoran L'Avenue",
+    "bpa": {
+      "cm": 7.5,
+      "nii": 5,
+      "assetSpread": 1.6,
+      "liabilitiesSpread": 1.4,
+      "fbi": 2.1
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 74.5,
+          "wtd": -1.27,
+          "mtd": 3.22,
+          "ytd": -2.72,
+          "yoy": -2.85,
+          "target": 68.39,
+          "percentTarget": 108.93
+        },
+        "giro": {
+          "today": 97.2,
+          "wtd": 0.64,
+          "mtd": -0.06,
+          "ytd": -5.64,
+          "yoy": 4.78,
+          "target": 110.8,
+          "percentTarget": 87.73
+        },
+        "deposito": {
+          "today": 124.13,
+          "wtd": 0.86,
+          "mtd": -1.29,
+          "ytd": 6.57,
+          "yoy": 15.39,
+          "target": 138.72,
+          "percentTarget": 89.48
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 111,
+          "target": 123,
+          "percentTarget": 90.24
+        },
+        "newCifGiro": {
+          "today": 6,
+          "target": 7,
+          "percentTarget": 85.71
+        },
+        "newCifTabunganBisnis": {
+          "today": 22,
+          "target": 27,
+          "percentTarget": 81.48
+        },
+        "newToPriority": {
+          "today": 7,
+          "target": 7,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1106.5,
+          "wtd": 2.57,
+          "mtd": -3.07,
+          "ytd": -9.84,
+          "yoy": 39.59,
+          "target": 1199.36,
+          "percentTarget": 92.26
+        },
+        "cl": {
+          "today": 636.8,
+          "wtd": -0.97,
+          "mtd": 2.67,
+          "ytd": 23.96,
+          "yoy": 20.99,
+          "target": 663.2,
+          "percentTarget": 96.02
+        },
+        "ksm": {
+          "today": 468.34,
+          "wtd": -0.62,
+          "mtd": -1.13,
+          "ytd": -1.95,
+          "yoy": 50.69,
+          "target": 511.2,
+          "percentTarget": 91.61
+        },
+        "cc": {
+          "today": 348.66,
+          "wtd": 0.58,
+          "mtd": 7.79,
+          "ytd": -1.48,
+          "yoy": 57.64,
+          "target": 363.22,
+          "percentTarget": 95.99
+        },
+        "micro": {
+          "today": 207.01,
+          "wtd": -1.02,
+          "mtd": -2.13,
+          "ytd": 22.25,
+          "yoy": 21.55,
+          "target": 210.32,
+          "percentTarget": 98.42
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 23,
+          "target": 23,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 38,
+          "target": 41,
+          "percentTarget": 92.68
+        },
+        "bookingKSM": {
+          "today": 44,
+          "target": 50,
+          "percentTarget": 88
+        },
+        "bookingCC": {
+          "today": 138,
+          "target": 151,
+          "percentTarget": 91.39
+        },
+        "bookingMicro": {
+          "today": 85,
+          "target": 94,
+          "percentTarget": 90.43
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 36,
+        "target": 36,
+        "percentTarget": 100
+      },
+      "turunan": {
+        "today": 54,
+        "target": 61,
+        "percentTarget": 88.52
+      },
+      "familyTree": {
+        "today": 18,
+        "target": 18,
+        "percentTarget": 100
+      },
+      "warungViral": {
+        "today": 205,
+        "target": 184,
+        "percentTarget": 111.41
+      },
+      "spbu": {
+        "today": 3,
+        "target": 3,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 12,
+        "target": 15,
+        "percentTarget": 80
+      },
+      "sppg": {
+        "today": 35,
+        "target": 43,
+        "percentTarget": 81.4
+      },
+      "billReminder": {
+        "today": 152,
+        "target": 165,
+        "percentTarget": 92.12
+      }
+    }
+  },
+  {
+    "code": "12433",
+    "class": "B.2",
+    "name": "Jakarta Plaza BP Jamsostek",
+    "bpa": {
+      "cm": 8.1,
+      "nii": 5.3,
+      "assetSpread": 1.7,
+      "liabilitiesSpread": 1.5,
+      "fbi": 2.3
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 90.15,
+          "wtd": 0.17,
+          "mtd": 2.54,
+          "ytd": -7.99,
+          "yoy": 11.75,
+          "target": 87.86,
+          "percentTarget": 102.6
+        },
+        "giro": {
+          "today": 129.79,
+          "wtd": 3.25,
+          "mtd": 1.5,
+          "ytd": 8.01,
+          "yoy": 9.21,
+          "target": 117.14,
+          "percentTarget": 110.8
+        },
+        "deposito": {
+          "today": 174.14,
+          "wtd": 3.07,
+          "mtd": 3.89,
+          "ytd": -7.57,
+          "yoy": -8.7,
+          "target": 204.96,
+          "percentTarget": 84.96
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 117,
+          "target": 127,
+          "percentTarget": 92.13
+        },
+        "newCifGiro": {
+          "today": 8,
+          "target": 10,
+          "percentTarget": 80
+        },
+        "newCifTabunganBisnis": {
+          "today": 26,
+          "target": 29,
+          "percentTarget": 89.66
+        },
+        "newToPriority": {
+          "today": 6,
+          "target": 7,
+          "percentTarget": 85.71
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 1141.97,
+          "wtd": -1.63,
+          "mtd": -0.39,
+          "ytd": 39.44,
+          "yoy": -18.72,
+          "target": 1245.79,
+          "percentTarget": 91.67
+        },
+        "cl": {
+          "today": 713.97,
+          "wtd": 1.93,
+          "mtd": -1.31,
+          "ytd": 33.83,
+          "yoy": -7.22,
+          "target": 768.92,
+          "percentTarget": 92.85
+        },
+        "ksm": {
+          "today": 415.69,
+          "wtd": 2.9,
+          "mtd": -2.91,
+          "ytd": 33.9,
+          "yoy": 78.03,
+          "target": 439.72,
+          "percentTarget": 94.54
+        },
+        "cc": {
+          "today": 301.29,
+          "wtd": 0.2,
+          "mtd": -0.85,
+          "ytd": 8.64,
+          "yoy": 28.05,
+          "target": 331.35,
+          "percentTarget": 90.93
+        },
+        "micro": {
+          "today": 202.02,
+          "wtd": -1.04,
+          "mtd": 5.61,
+          "ytd": -5.77,
+          "yoy": -17.76,
+          "target": 203.05,
+          "percentTarget": 99.49
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 27,
+          "target": 27,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 31,
+          "target": 32,
+          "percentTarget": 96.88
+        },
+        "bookingKSM": {
+          "today": 48,
+          "target": 49,
+          "percentTarget": 97.96
+        },
+        "bookingCC": {
+          "today": 105,
+          "target": 118,
+          "percentTarget": 88.98
+        },
+        "bookingMicro": {
+          "today": 65,
+          "target": 75,
+          "percentTarget": 86.67
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 23,
+        "target": 21,
+        "percentTarget": 109.52
+      },
+      "turunan": {
+        "today": 66,
+        "target": 70,
+        "percentTarget": 94.29
+      },
+      "familyTree": {
+        "today": 15,
+        "target": 15,
+        "percentTarget": 100
+      },
+      "warungViral": {
+        "today": 82,
+        "target": 86,
+        "percentTarget": 95.35
+      },
+      "spbu": {
+        "today": 5,
+        "target": 5,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 38,
+        "target": 34,
+        "percentTarget": 111.76
+      },
+      "sppg": {
+        "today": 25,
+        "target": 28,
+        "percentTarget": 89.29
+      },
+      "billReminder": {
+        "today": 233,
+        "target": 197,
+        "percentTarget": 118.27
+      }
+    }
+  },
+  {
+    "code": "12406",
+    "class": "B.3",
+    "name": "Jakarta Lapangan Ros",
+    "bpa": {
+      "cm": 5.4,
+      "nii": 3.5,
+      "assetSpread": 1.2,
+      "liabilitiesSpread": 1,
+      "fbi": 1.5
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 44.01,
+          "wtd": 0.55,
+          "mtd": 0.81,
+          "ytd": -3.66,
+          "yoy": 5.62,
+          "target": 48.1,
+          "percentTarget": 91.49
+        },
+        "giro": {
+          "today": 82.53,
+          "wtd": 2.37,
+          "mtd": 3.44,
+          "ytd": -7.75,
+          "yoy": 11.96,
+          "target": 75.7,
+          "percentTarget": 109.02
+        },
+        "deposito": {
+          "today": 113.28,
+          "wtd": -1.16,
+          "mtd": -4.15,
+          "ytd": 8.2,
+          "yoy": 14.3,
+          "target": 133.53,
+          "percentTarget": 84.83
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 86,
+          "target": 86,
+          "percentTarget": 100
+        },
+        "newCifGiro": {
+          "today": 14,
+          "target": 14,
+          "percentTarget": 100
+        },
+        "newCifTabunganBisnis": {
+          "today": 7,
+          "target": 8,
+          "percentTarget": 87.5
+        },
+        "newToPriority": {
+          "today": 2,
+          "target": 3,
+          "percentTarget": 66.67
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 599.12,
+          "wtd": -1.89,
+          "mtd": -2.58,
+          "ytd": 28.04,
+          "yoy": 31.84,
+          "target": 642.27,
+          "percentTarget": 93.28
+        },
+        "cl": {
+          "today": 317.93,
+          "wtd": 2.07,
+          "mtd": 2.41,
+          "ytd": 13.65,
+          "yoy": 61.46,
+          "target": 345.28,
+          "percentTarget": 92.08
+        },
+        "ksm": {
+          "today": 223.41,
+          "wtd": 1.58,
+          "mtd": -4.33,
+          "ytd": 35.08,
+          "yoy": 77.37,
+          "target": 225.93,
+          "percentTarget": 98.88
+        },
+        "cc": {
+          "today": 179.62,
+          "wtd": 2.32,
+          "mtd": -4.53,
+          "ytd": 10.62,
+          "yoy": 74.3,
+          "target": 196.88,
+          "percentTarget": 91.24
+        },
+        "micro": {
+          "today": 102.51,
+          "wtd": -1.61,
+          "mtd": -4.36,
+          "ytd": 39.85,
+          "yoy": 75.51,
+          "target": 106.77,
+          "percentTarget": 96.01
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 14,
+          "target": 15,
+          "percentTarget": 93.33
+        },
+        "bookingCL": {
+          "today": 22,
+          "target": 23,
+          "percentTarget": 95.65
+        },
+        "bookingKSM": {
+          "today": 28,
+          "target": 29,
+          "percentTarget": 96.55
+        },
+        "bookingCC": {
+          "today": 64,
+          "target": 65,
+          "percentTarget": 98.46
+        },
+        "bookingMicro": {
+          "today": 31,
+          "target": 35,
+          "percentTarget": 88.57
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 25,
+        "target": 24,
+        "percentTarget": 104.17
+      },
+      "turunan": {
+        "today": 38,
+        "target": 33,
+        "percentTarget": 115.15
+      },
+      "familyTree": {
+        "today": 32,
+        "target": 33,
+        "percentTarget": 96.97
+      },
+      "warungViral": {
+        "today": 176,
+        "target": 181,
+        "percentTarget": 97.24
+      },
+      "spbu": {
+        "today": 3,
+        "target": 4,
+        "percentTarget": 75
+      },
+      "kdkmp": {
+        "today": 28,
+        "target": 31,
+        "percentTarget": 90.32
+      },
+      "sppg": {
+        "today": 23,
+        "target": 23,
+        "percentTarget": 100
+      },
+      "billReminder": {
+        "today": 291,
+        "target": 253,
+        "percentTarget": 115.02
+      }
+    }
+  },
+  {
+    "code": "12409",
+    "class": "B.3",
+    "name": "Jakarta Tebet Barat",
+    "bpa": {
+      "cm": 6.1,
+      "nii": 4,
+      "assetSpread": 1.3,
+      "liabilitiesSpread": 1.1,
+      "fbi": 1.7
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 51.99,
+          "wtd": -0.33,
+          "mtd": 2.13,
+          "ytd": 3.85,
+          "yoy": 1.96,
+          "target": 59.51,
+          "percentTarget": 87.36
+        },
+        "giro": {
+          "today": 77.29,
+          "wtd": 2.15,
+          "mtd": 2.98,
+          "ytd": 5,
+          "yoy": -8.84,
+          "target": 72.2,
+          "percentTarget": 107.05
+        },
+        "deposito": {
+          "today": 121,
+          "wtd": -0.33,
+          "mtd": 0.82,
+          "ytd": 9.41,
+          "yoy": 11.04,
+          "target": 123.73,
+          "percentTarget": 97.79
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 25,
+          "target": 24,
+          "percentTarget": 104.17
+        },
+        "newCifGiro": {
+          "today": 8,
+          "target": 9,
+          "percentTarget": 88.89
+        },
+        "newCifTabunganBisnis": {
+          "today": 28,
+          "target": 29,
+          "percentTarget": 96.55
+        },
+        "newToPriority": {
+          "today": 8,
+          "target": 8,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 566.1,
+          "wtd": 1.03,
+          "mtd": -2.62,
+          "ytd": -1.84,
+          "yoy": 73.9,
+          "target": 588.8,
+          "percentTarget": 96.15
+        },
+        "cl": {
+          "today": 332.37,
+          "wtd": 0.7,
+          "mtd": 9.86,
+          "ytd": 2.17,
+          "yoy": 41.02,
+          "target": 348.51,
+          "percentTarget": 95.37
+        },
+        "ksm": {
+          "today": 219.83,
+          "wtd": -1.27,
+          "mtd": 3.94,
+          "ytd": -2.8,
+          "yoy": 59.11,
+          "target": 239.01,
+          "percentTarget": 91.98
+        },
+        "cc": {
+          "today": 157.56,
+          "wtd": 1.35,
+          "mtd": 4.6,
+          "ytd": 1.39,
+          "yoy": 15.93,
+          "target": 161.02,
+          "percentTarget": 97.85
+        },
+        "micro": {
+          "today": 110.36,
+          "wtd": -0.24,
+          "mtd": 2.52,
+          "ytd": 31.22,
+          "yoy": 10.68,
+          "target": 116.5,
+          "percentTarget": 94.73
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 13,
+          "target": 13,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 22,
+          "target": 24,
+          "percentTarget": 91.67
+        },
+        "bookingKSM": {
+          "today": 23,
+          "target": 25,
+          "percentTarget": 92
+        },
+        "bookingCC": {
+          "today": 53,
+          "target": 56,
+          "percentTarget": 94.64
+        },
+        "bookingMicro": {
+          "today": 42,
+          "target": 49,
+          "percentTarget": 85.71
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 44,
+        "target": 41,
+        "percentTarget": 107.32
+      },
+      "turunan": {
+        "today": 47,
+        "target": 51,
+        "percentTarget": 92.16
+      },
+      "familyTree": {
+        "today": 24,
+        "target": 25,
+        "percentTarget": 96
+      },
+      "warungViral": {
+        "today": 204,
+        "target": 209,
+        "percentTarget": 97.61
+      },
+      "spbu": {
+        "today": 3,
+        "target": 3,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 54,
+        "target": 45,
+        "percentTarget": 120
+      },
+      "sppg": {
+        "today": 42,
+        "target": 49,
+        "percentTarget": 85.71
+      },
+      "billReminder": {
+        "today": 142,
+        "target": 160,
+        "percentTarget": 88.75
+      }
+    }
+  },
+  {
+    "code": "12410",
+    "class": "B.3",
+    "name": "Jakarta Wisma Tugu",
+    "bpa": {
+      "cm": 5.8,
+      "nii": 3.8,
+      "assetSpread": 1.2,
+      "liabilitiesSpread": 1,
+      "fbi": 1.6
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 67.71,
+          "wtd": 1.4,
+          "mtd": 1.07,
+          "ytd": -6.55,
+          "yoy": 9.79,
+          "target": 66.37,
+          "percentTarget": 102.01
+        },
+        "giro": {
+          "today": 79.24,
+          "wtd": 2.09,
+          "mtd": -3.15,
+          "ytd": 0.15,
+          "yoy": 10.11,
+          "target": 93.38,
+          "percentTarget": 84.87
+        },
+        "deposito": {
+          "today": 113.28,
+          "wtd": -1.49,
+          "mtd": -1.01,
+          "ytd": -1.37,
+          "yoy": -2.24,
+          "target": 118.22,
+          "percentTarget": 95.82
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 23,
+          "target": 27,
+          "percentTarget": 85.19
+        },
+        "newCifGiro": {
+          "today": 23,
+          "target": 22,
+          "percentTarget": 104.55
+        },
+        "newCifTabunganBisnis": {
+          "today": 12,
+          "target": 14,
+          "percentTarget": 85.71
+        },
+        "newToPriority": {
+          "today": 10,
+          "target": 11,
+          "percentTarget": 90.91
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 519.03,
+          "wtd": -0.84,
+          "mtd": 4.73,
+          "ytd": 30.2,
+          "yoy": 34.25,
+          "target": 525.14,
+          "percentTarget": 98.84
+        },
+        "cl": {
+          "today": 325.53,
+          "wtd": 0.65,
+          "mtd": -0.29,
+          "ytd": 1.06,
+          "yoy": 21.04,
+          "target": 334.03,
+          "percentTarget": 97.46
+        },
+        "ksm": {
+          "today": 215.58,
+          "wtd": 1.25,
+          "mtd": 9.45,
+          "ytd": 18.08,
+          "yoy": 76.4,
+          "target": 220.32,
+          "percentTarget": 97.85
+        },
+        "cc": {
+          "today": 151.96,
+          "wtd": 2.02,
+          "mtd": 3.37,
+          "ytd": 23.93,
+          "yoy": 3.06,
+          "target": 165.17,
+          "percentTarget": 92
+        },
+        "micro": {
+          "today": 101.48,
+          "wtd": 0.59,
+          "mtd": 0.78,
+          "ytd": 25.84,
+          "yoy": 61.03,
+          "target": 109.23,
+          "percentTarget": 92.91
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 13,
+          "target": 14,
+          "percentTarget": 92.86
+        },
+        "bookingCL": {
+          "today": 21,
+          "target": 24,
+          "percentTarget": 87.5
+        },
+        "bookingKSM": {
+          "today": 22,
+          "target": 24,
+          "percentTarget": 91.67
+        },
+        "bookingCC": {
+          "today": 71,
+          "target": 73,
+          "percentTarget": 97.26
+        },
+        "bookingMicro": {
+          "today": 39,
+          "target": 43,
+          "percentTarget": 90.7
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 10,
+        "target": 11,
+        "percentTarget": 90.91
+      },
+      "turunan": {
+        "today": 99,
+        "target": 91,
+        "percentTarget": 108.79
+      },
+      "familyTree": {
+        "today": 5,
+        "target": 5,
+        "percentTarget": 100
+      },
+      "warungViral": {
+        "today": 208,
+        "target": 190,
+        "percentTarget": 109.47
+      },
+      "spbu": {
+        "today": 8,
+        "target": 7,
+        "percentTarget": 114.29
+      },
+      "kdkmp": {
+        "today": 10,
+        "target": 10,
+        "percentTarget": 100
+      },
+      "sppg": {
+        "today": 48,
+        "target": 49,
+        "percentTarget": 97.96
+      },
+      "billReminder": {
+        "today": 135,
+        "target": 124,
+        "percentTarget": 108.87
+      }
+    }
+  },
+  {
+    "code": "12411",
+    "class": "B.3",
+    "name": "Jakarta Pasar Rumput",
+    "bpa": {
+      "cm": 4.9,
+      "nii": 3.2,
+      "assetSpread": 1,
+      "liabilitiesSpread": 0.9,
+      "fbi": 1.3
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 48.34,
+          "wtd": 0.68,
+          "mtd": 1.21,
+          "ytd": 2.5,
+          "yoy": 1.33,
+          "target": 49.79,
+          "percentTarget": 97.09
+        },
+        "giro": {
+          "today": 64.02,
+          "wtd": 0.21,
+          "mtd": 1.73,
+          "ytd": 1.29,
+          "yoy": -7.51,
+          "target": 66.29,
+          "percentTarget": 96.59
+        },
+        "deposito": {
+          "today": 104.96,
+          "wtd": -0.85,
+          "mtd": 3.38,
+          "ytd": 0.36,
+          "yoy": -5.29,
+          "target": 114.82,
+          "percentTarget": 91.41
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 42,
+          "target": 42,
+          "percentTarget": 100
+        },
+        "newCifGiro": {
+          "today": 16,
+          "target": 17,
+          "percentTarget": 94.12
+        },
+        "newCifTabunganBisnis": {
+          "today": 35,
+          "target": 37,
+          "percentTarget": 94.59
+        },
+        "newToPriority": {
+          "today": 11,
+          "target": 11,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 595.75,
+          "wtd": 0.26,
+          "mtd": 5.32,
+          "ytd": 27.63,
+          "yoy": 44.22,
+          "target": 632.8,
+          "percentTarget": 94.15
+        },
+        "cl": {
+          "today": 335.9,
+          "wtd": -1.6,
+          "mtd": 0.79,
+          "ytd": -5.57,
+          "yoy": 18.88,
+          "target": 368.54,
+          "percentTarget": 91.14
+        },
+        "ksm": {
+          "today": 236.3,
+          "wtd": -1.84,
+          "mtd": 3.11,
+          "ytd": 11.2,
+          "yoy": 15.35,
+          "target": 240.4,
+          "percentTarget": 98.3
+        },
+        "cc": {
+          "today": 154.37,
+          "wtd": 2.19,
+          "mtd": -1.93,
+          "ytd": 35.97,
+          "yoy": 74.38,
+          "target": 168.93,
+          "percentTarget": 91.38
+        },
+        "micro": {
+          "today": 113.25,
+          "wtd": 1.39,
+          "mtd": 7.2,
+          "ytd": 30.06,
+          "yoy": 33.8,
+          "target": 115.5,
+          "percentTarget": 98.05
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 12,
+          "target": 12,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 16,
+          "target": 16,
+          "percentTarget": 100
+        },
+        "bookingKSM": {
+          "today": 26,
+          "target": 27,
+          "percentTarget": 96.3
+        },
+        "bookingCC": {
+          "today": 70,
+          "target": 70,
+          "percentTarget": 100
+        },
+        "bookingMicro": {
+          "today": 41,
+          "target": 44,
+          "percentTarget": 93.18
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 56,
+        "target": 53,
+        "percentTarget": 105.66
+      },
+      "turunan": {
+        "today": 86,
+        "target": 72,
+        "percentTarget": 119.44
+      },
+      "familyTree": {
+        "today": 40,
+        "target": 34,
+        "percentTarget": 117.65
+      },
+      "warungViral": {
+        "today": 233,
+        "target": 226,
+        "percentTarget": 103.1
+      },
+      "spbu": {
+        "today": 11,
+        "target": 10,
+        "percentTarget": 110
+      },
+      "kdkmp": {
+        "today": 51,
+        "target": 49,
+        "percentTarget": 104.08
+      },
+      "sppg": {
+        "today": 13,
+        "target": 16,
+        "percentTarget": 81.25
+      },
+      "billReminder": {
+        "today": 173,
+        "target": 167,
+        "percentTarget": 103.59
+      }
+    }
+  },
+  {
+    "code": "12412",
+    "class": "B.3",
+    "name": "Jakarta Tebet Timur",
+    "bpa": {
+      "cm": 5.2,
+      "nii": 3.4,
+      "assetSpread": 1.1,
+      "liabilitiesSpread": 0.9,
+      "fbi": 1.4
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 61.13,
+          "wtd": 1.69,
+          "mtd": 2.92,
+          "ytd": -1.93,
+          "yoy": 3.24,
+          "target": 69.36,
+          "percentTarget": 88.13
+        },
+        "giro": {
+          "today": 91.6,
+          "wtd": 1.56,
+          "mtd": 0.9,
+          "ytd": 4.88,
+          "yoy": 2.08,
+          "target": 99.43,
+          "percentTarget": 92.12
+        },
+        "deposito": {
+          "today": 98.3,
+          "wtd": 2,
+          "mtd": 1.55,
+          "ytd": -3.79,
+          "yoy": 1.54,
+          "target": 94.43,
+          "percentTarget": 104.09
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 61,
+          "target": 72,
+          "percentTarget": 84.72
+        },
+        "newCifGiro": {
+          "today": 20,
+          "target": 23,
+          "percentTarget": 86.96
+        },
+        "newCifTabunganBisnis": {
+          "today": 7,
+          "target": 8,
+          "percentTarget": 87.5
+        },
+        "newToPriority": {
+          "today": 11,
+          "target": 11,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 509.3,
+          "wtd": -1.02,
+          "mtd": 6.82,
+          "ytd": 9.27,
+          "yoy": 59.19,
+          "target": 515.96,
+          "percentTarget": 98.71
+        },
+        "cl": {
+          "today": 322.72,
+          "wtd": 0.96,
+          "mtd": 1.74,
+          "ytd": 28.86,
+          "yoy": 16.91,
+          "target": 337.36,
+          "percentTarget": 95.66
+        },
+        "ksm": {
+          "today": 211.11,
+          "wtd": 0.07,
+          "mtd": 3.61,
+          "ytd": 28.9,
+          "yoy": 43.18,
+          "target": 230.11,
+          "percentTarget": 91.74
+        },
+        "cc": {
+          "today": 170.64,
+          "wtd": -1.99,
+          "mtd": 5.35,
+          "ytd": 17.66,
+          "yoy": 79.46,
+          "target": 172.34,
+          "percentTarget": 99.01
+        },
+        "micro": {
+          "today": 110.65,
+          "wtd": 0.75,
+          "mtd": 3,
+          "ytd": 30.32,
+          "yoy": -19.41,
+          "target": 116.18,
+          "percentTarget": 95.24
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 14,
+          "target": 14,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 20,
+          "target": 23,
+          "percentTarget": 86.96
+        },
+        "bookingKSM": {
+          "today": 27,
+          "target": 29,
+          "percentTarget": 93.1
+        },
+        "bookingCC": {
+          "today": 74,
+          "target": 74,
+          "percentTarget": 100
+        },
+        "bookingMicro": {
+          "today": 34,
+          "target": 34,
+          "percentTarget": 100
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 30,
+        "target": 27,
+        "percentTarget": 111.11
+      },
+      "turunan": {
+        "today": 83,
+        "target": 75,
+        "percentTarget": 110.67
+      },
+      "familyTree": {
+        "today": 26,
+        "target": 27,
+        "percentTarget": 96.3
+      },
+      "warungViral": {
+        "today": 189,
+        "target": 206,
+        "percentTarget": 91.75
+      },
+      "spbu": {
+        "today": 6,
+        "target": 7,
+        "percentTarget": 85.71
+      },
+      "kdkmp": {
+        "today": 34,
+        "target": 34,
+        "percentTarget": 100
+      },
+      "sppg": {
+        "today": 38,
+        "target": 36,
+        "percentTarget": 105.56
+      },
+      "billReminder": {
+        "today": 405,
+        "target": 344,
+        "percentTarget": 117.73
+      }
+    }
+  },
+  {
+    "code": "12424",
+    "class": "B.3",
+    "name": "Jakarta Wisma IKPT",
+    "bpa": {
+      "cm": 5.6,
+      "nii": 3.7,
+      "assetSpread": 1.2,
+      "liabilitiesSpread": 1,
+      "fbi": 1.5
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 52.51,
+          "wtd": 0.23,
+          "mtd": -1.84,
+          "ytd": -1.64,
+          "yoy": -4.89,
+          "target": 50.6,
+          "percentTarget": 103.76
+        },
+        "giro": {
+          "today": 80.45,
+          "wtd": 0.48,
+          "mtd": 0.97,
+          "ytd": 1.9,
+          "yoy": 8.98,
+          "target": 73.24,
+          "percentTarget": 109.84
+        },
+        "deposito": {
+          "today": 95.07,
+          "wtd": 2.46,
+          "mtd": -2.2,
+          "ytd": 2.59,
+          "yoy": 14,
+          "target": 87.16,
+          "percentTarget": 109.08
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 95,
+          "target": 92,
+          "percentTarget": 103.26
+        },
+        "newCifGiro": {
+          "today": 10,
+          "target": 10,
+          "percentTarget": 100
+        },
+        "newCifTabunganBisnis": {
+          "today": 34,
+          "target": 38,
+          "percentTarget": 89.47
+        },
+        "newToPriority": {
+          "today": 4,
+          "target": 5,
+          "percentTarget": 80
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 553.48,
+          "wtd": 0.3,
+          "mtd": 6.43,
+          "ytd": 17.04,
+          "yoy": 0.09,
+          "target": 577.65,
+          "percentTarget": 95.82
+        },
+        "cl": {
+          "today": 321.64,
+          "wtd": -0.69,
+          "mtd": -1.03,
+          "ytd": 13.04,
+          "yoy": 16.96,
+          "target": 346.37,
+          "percentTarget": 92.86
+        },
+        "ksm": {
+          "today": 234.12,
+          "wtd": -1.91,
+          "mtd": -0.19,
+          "ytd": 6.19,
+          "yoy": 22.58,
+          "target": 255.48,
+          "percentTarget": 91.64
+        },
+        "cc": {
+          "today": 165.05,
+          "wtd": -1.08,
+          "mtd": 7.22,
+          "ytd": 18.7,
+          "yoy": 1.08,
+          "target": 172.01,
+          "percentTarget": 95.96
+        },
+        "micro": {
+          "today": 101.43,
+          "wtd": -1.64,
+          "mtd": -2.32,
+          "ytd": 12.25,
+          "yoy": 9.57,
+          "target": 105.23,
+          "percentTarget": 96.39
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 13,
+          "target": 13,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 21,
+          "target": 24,
+          "percentTarget": 87.5
+        },
+        "bookingKSM": {
+          "today": 28,
+          "target": 28,
+          "percentTarget": 100
+        },
+        "bookingCC": {
+          "today": 63,
+          "target": 71,
+          "percentTarget": 88.73
+        },
+        "bookingMicro": {
+          "today": 36,
+          "target": 40,
+          "percentTarget": 90
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 23,
+        "target": 24,
+        "percentTarget": 95.83
+      },
+      "turunan": {
+        "today": 115,
+        "target": 96,
+        "percentTarget": 119.79
+      },
+      "familyTree": {
+        "today": 23,
+        "target": 23,
+        "percentTarget": 100
+      },
+      "warungViral": {
+        "today": 99,
+        "target": 111,
+        "percentTarget": 89.19
+      },
+      "spbu": {
+        "today": 4,
+        "target": 4,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 52,
+        "target": 49,
+        "percentTarget": 106.12
+      },
+      "sppg": {
+        "today": 25,
+        "target": 21,
+        "percentTarget": 119.05
+      },
+      "billReminder": {
+        "today": 242,
+        "target": 209,
+        "percentTarget": 115.79
+      }
+    }
+  },
+  {
+    "code": "12415",
+    "class": "B.4",
+    "name": "Jakarta Rasuna Episentrum",
+    "bpa": {
+      "cm": 3.8,
+      "nii": 2.5,
+      "assetSpread": 0.8,
+      "liabilitiesSpread": 0.7,
+      "fbi": 1
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 44.54,
+          "wtd": 1.32,
+          "mtd": 1.69,
+          "ytd": 2.38,
+          "yoy": 6.63,
+          "target": 44.06,
+          "percentTarget": 101.09
+        },
+        "giro": {
+          "today": 64.66,
+          "wtd": 1.63,
+          "mtd": 0.67,
+          "ytd": 6.21,
+          "yoy": 3.46,
+          "target": 61.56,
+          "percentTarget": 105.04
+        },
+        "deposito": {
+          "today": 64.89,
+          "wtd": 1.37,
+          "mtd": 2.16,
+          "ytd": -3.5,
+          "yoy": -4.6,
+          "target": 58.56,
+          "percentTarget": 110.82
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 100,
+          "target": 120,
+          "percentTarget": 83.33
+        },
+        "newCifGiro": {
+          "today": 7,
+          "target": 8,
+          "percentTarget": 87.5
+        },
+        "newCifTabunganBisnis": {
+          "today": 15,
+          "target": 17,
+          "percentTarget": 88.24
+        },
+        "newToPriority": {
+          "today": 4,
+          "target": 5,
+          "percentTarget": 80
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 268.81,
+          "wtd": 2.78,
+          "mtd": 1.28,
+          "ytd": 1.76,
+          "yoy": 36.86,
+          "target": 280.39,
+          "percentTarget": 95.87
+        },
+        "cl": {
+          "today": 165.75,
+          "wtd": 0,
+          "mtd": 7.98,
+          "ytd": 13.56,
+          "yoy": 12.97,
+          "target": 176.53,
+          "percentTarget": 93.9
+        },
+        "ksm": {
+          "today": 106.44,
+          "wtd": -1.88,
+          "mtd": -3.52,
+          "ytd": 2.33,
+          "yoy": -16.23,
+          "target": 107.02,
+          "percentTarget": 99.46
+        },
+        "cc": {
+          "today": 79.72,
+          "wtd": -0.08,
+          "mtd": 2.91,
+          "ytd": 37.23,
+          "yoy": -12.31,
+          "target": 80.3,
+          "percentTarget": 99.29
+        },
+        "micro": {
+          "today": 51.24,
+          "wtd": 1.74,
+          "mtd": 6.37,
+          "ytd": 17.13,
+          "yoy": 57.28,
+          "target": 53.42,
+          "percentTarget": 95.93
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 5,
+          "target": 5,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 9,
+          "target": 9,
+          "percentTarget": 100
+        },
+        "bookingKSM": {
+          "today": 10,
+          "target": 11,
+          "percentTarget": 90.91
+        },
+        "bookingCC": {
+          "today": 28,
+          "target": 32,
+          "percentTarget": 87.5
+        },
+        "bookingMicro": {
+          "today": 16,
+          "target": 18,
+          "percentTarget": 88.89
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 61,
+        "target": 56,
+        "percentTarget": 108.93
+      },
+      "turunan": {
+        "today": 86,
+        "target": 100,
+        "percentTarget": 86
+      },
+      "familyTree": {
+        "today": 21,
+        "target": 23,
+        "percentTarget": 91.3
+      },
+      "warungViral": {
+        "today": 170,
+        "target": 189,
+        "percentTarget": 89.95
+      },
+      "spbu": {
+        "today": 9,
+        "target": 9,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 33,
+        "target": 39,
+        "percentTarget": 84.62
+      },
+      "sppg": {
+        "today": 42,
+        "target": 38,
+        "percentTarget": 110.53
+      },
+      "billReminder": {
+        "today": 431,
+        "target": 369,
+        "percentTarget": 116.8
+      }
+    }
+  },
+  {
+    "code": "12419",
+    "class": "B.4",
+    "name": "Jakarta Kalibata Rawajati",
+    "bpa": {
+      "cm": 3.2,
+      "nii": 2.1,
+      "assetSpread": 0.7,
+      "liabilitiesSpread": 0.6,
+      "fbi": 0.9
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 35.06,
+          "wtd": 0.85,
+          "mtd": -1.26,
+          "ytd": -1.3,
+          "yoy": 4.1,
+          "target": 34.29,
+          "percentTarget": 102.27
+        },
+        "giro": {
+          "today": 38.48,
+          "wtd": 0.01,
+          "mtd": 1.3,
+          "ytd": 2.95,
+          "yoy": 2.85,
+          "target": 36.15,
+          "percentTarget": 106.43
+        },
+        "deposito": {
+          "today": 61.63,
+          "wtd": 1.72,
+          "mtd": -2.45,
+          "ytd": 3.01,
+          "yoy": -2.78,
+          "target": 60.71,
+          "percentTarget": 101.51
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 65,
+          "target": 63,
+          "percentTarget": 103.17
+        },
+        "newCifGiro": {
+          "today": 13,
+          "target": 12,
+          "percentTarget": 108.33
+        },
+        "newCifTabunganBisnis": {
+          "today": 22,
+          "target": 23,
+          "percentTarget": 95.65
+        },
+        "newToPriority": {
+          "today": 7,
+          "target": 7,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 295.41,
+          "wtd": -0.77,
+          "mtd": 6.24,
+          "ytd": 9.81,
+          "yoy": 56.94,
+          "target": 308.18,
+          "percentTarget": 95.86
+        },
+        "cl": {
+          "today": 161.33,
+          "wtd": -1.52,
+          "mtd": -4.6,
+          "ytd": 28.93,
+          "yoy": 14.29,
+          "target": 169.42,
+          "percentTarget": 95.22
+        },
+        "ksm": {
+          "today": 102.94,
+          "wtd": -1.13,
+          "mtd": 5.52,
+          "ytd": 31.82,
+          "yoy": 43.46,
+          "target": 105.84,
+          "percentTarget": 97.26
+        },
+        "cc": {
+          "today": 75.07,
+          "wtd": -1.6,
+          "mtd": -4.81,
+          "ytd": 22.87,
+          "yoy": 3.63,
+          "target": 77.96,
+          "percentTarget": 96.29
+        },
+        "micro": {
+          "today": 52.39,
+          "wtd": -0.21,
+          "mtd": 9.11,
+          "ytd": 18.26,
+          "yoy": 35.81,
+          "target": 57.02,
+          "percentTarget": 91.88
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 6,
+          "target": 6,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 10,
+          "target": 10,
+          "percentTarget": 100
+        },
+        "bookingKSM": {
+          "today": 10,
+          "target": 10,
+          "percentTarget": 100
+        },
+        "bookingCC": {
+          "today": 29,
+          "target": 32,
+          "percentTarget": 90.63
+        },
+        "bookingMicro": {
+          "today": 15,
+          "target": 15,
+          "percentTarget": 100
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 26,
+        "target": 26,
+        "percentTarget": 100
+      },
+      "turunan": {
+        "today": 62,
+        "target": 59,
+        "percentTarget": 105.08
+      },
+      "familyTree": {
+        "today": 31,
+        "target": 34,
+        "percentTarget": 91.18
+      },
+      "warungViral": {
+        "today": 265,
+        "target": 239,
+        "percentTarget": 110.88
+      },
+      "spbu": {
+        "today": 6,
+        "target": 5,
+        "percentTarget": 120
+      },
+      "kdkmp": {
+        "today": 25,
+        "target": 25,
+        "percentTarget": 100
+      },
+      "sppg": {
+        "today": 18,
+        "target": 22,
+        "percentTarget": 81.82
+      },
+      "billReminder": {
+        "today": 254,
+        "target": 299,
+        "percentTarget": 84.95
+      }
+    }
+  },
+  {
+    "code": "12425",
+    "class": "B.4",
+    "name": "Jakarta Gedung Sucofindo",
+    "bpa": {
+      "cm": 4.1,
+      "nii": 2.7,
+      "assetSpread": 0.9,
+      "liabilitiesSpread": 0.8,
+      "fbi": 1.1
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 35.04,
+          "wtd": -0.12,
+          "mtd": -1.29,
+          "ytd": 2.3,
+          "yoy": 4.17,
+          "target": 35.43,
+          "percentTarget": 98.89
+        },
+        "giro": {
+          "today": 64.71,
+          "wtd": 0.86,
+          "mtd": -0.55,
+          "ytd": 5.6,
+          "yoy": -4.85,
+          "target": 60.69,
+          "percentTarget": 106.63
+        },
+        "deposito": {
+          "today": 97.73,
+          "wtd": 1.83,
+          "mtd": 4.44,
+          "ytd": 9.65,
+          "yoy": 14.11,
+          "target": 93.78,
+          "percentTarget": 104.22
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 112,
+          "target": 109,
+          "percentTarget": 102.75
+        },
+        "newCifGiro": {
+          "today": 5,
+          "target": 6,
+          "percentTarget": 83.33
+        },
+        "newCifTabunganBisnis": {
+          "today": 14,
+          "target": 14,
+          "percentTarget": 100
+        },
+        "newToPriority": {
+          "today": 8,
+          "target": 10,
+          "percentTarget": 80
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 285.33,
+          "wtd": 1.3,
+          "mtd": 0.53,
+          "ytd": -0.85,
+          "yoy": -14.33,
+          "target": 306.86,
+          "percentTarget": 92.98
+        },
+        "cl": {
+          "today": 178.49,
+          "wtd": 0.47,
+          "mtd": -4.55,
+          "ytd": 10.9,
+          "yoy": 8.32,
+          "target": 193.03,
+          "percentTarget": 92.47
+        },
+        "ksm": {
+          "today": 117.77,
+          "wtd": 2.45,
+          "mtd": 6.31,
+          "ytd": 27.06,
+          "yoy": 44.67,
+          "target": 124.93,
+          "percentTarget": 94.27
+        },
+        "cc": {
+          "today": 88.44,
+          "wtd": -1.03,
+          "mtd": 9.37,
+          "ytd": 3.36,
+          "yoy": 56.19,
+          "target": 91.95,
+          "percentTarget": 96.19
+        },
+        "micro": {
+          "today": 59.75,
+          "wtd": 1.84,
+          "mtd": 7.18,
+          "ytd": 10.81,
+          "yoy": 57.18,
+          "target": 62.97,
+          "percentTarget": 94.88
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 7,
+          "target": 7,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 9,
+          "target": 10,
+          "percentTarget": 90
+        },
+        "bookingKSM": {
+          "today": 14,
+          "target": 16,
+          "percentTarget": 87.5
+        },
+        "bookingCC": {
+          "today": 27,
+          "target": 31,
+          "percentTarget": 87.1
+        },
+        "bookingMicro": {
+          "today": 20,
+          "target": 21,
+          "percentTarget": 95.24
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 25,
+        "target": 29,
+        "percentTarget": 86.21
+      },
+      "turunan": {
+        "today": 93,
+        "target": 80,
+        "percentTarget": 116.25
+      },
+      "familyTree": {
+        "today": 28,
+        "target": 29,
+        "percentTarget": 96.55
+      },
+      "warungViral": {
+        "today": 66,
+        "target": 72,
+        "percentTarget": 91.67
+      },
+      "spbu": {
+        "today": 6,
+        "target": 8,
+        "percentTarget": 75
+      },
+      "kdkmp": {
+        "today": 22,
+        "target": 24,
+        "percentTarget": 91.67
+      },
+      "sppg": {
+        "today": 68,
+        "target": 59,
+        "percentTarget": 115.25
+      },
+      "billReminder": {
+        "today": 219,
+        "target": 266,
+        "percentTarget": 82.33
+      }
+    }
+  },
+  {
+    "code": "12426",
+    "class": "B.4",
+    "name": "Jakarta Multivision Tower",
+    "bpa": {
+      "cm": 3.5,
+      "nii": 2.3,
+      "assetSpread": 0.8,
+      "liabilitiesSpread": 0.6,
+      "fbi": 0.9
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 39.33,
+          "wtd": -0.1,
+          "mtd": -1.87,
+          "ytd": -3.05,
+          "yoy": 5,
+          "target": 36.81,
+          "percentTarget": 106.87
+        },
+        "giro": {
+          "today": 46.02,
+          "wtd": -0.92,
+          "mtd": -0.17,
+          "ytd": -3.77,
+          "yoy": 1.94,
+          "target": 47.59,
+          "percentTarget": 96.69
+        },
+        "deposito": {
+          "today": 77.5,
+          "wtd": 1.64,
+          "mtd": 2.69,
+          "ytd": 4.23,
+          "yoy": 0.43,
+          "target": 83.71,
+          "percentTarget": 92.58
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 42,
+          "target": 46,
+          "percentTarget": 91.3
+        },
+        "newCifGiro": {
+          "today": 20,
+          "target": 24,
+          "percentTarget": 83.33
+        },
+        "newCifTabunganBisnis": {
+          "today": 15,
+          "target": 15,
+          "percentTarget": 100
+        },
+        "newToPriority": {
+          "today": 2,
+          "target": 3,
+          "percentTarget": 66.67
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 265.05,
+          "wtd": -0.25,
+          "mtd": -2.37,
+          "ytd": 16.35,
+          "yoy": 78.7,
+          "target": 291.2,
+          "percentTarget": 91.02
+        },
+        "cl": {
+          "today": 161.78,
+          "wtd": 2.31,
+          "mtd": 2.4,
+          "ytd": 25.14,
+          "yoy": 59.13,
+          "target": 175.45,
+          "percentTarget": 92.21
+        },
+        "ksm": {
+          "today": 119.68,
+          "wtd": 2.83,
+          "mtd": 6.8,
+          "ytd": -2.52,
+          "yoy": -9.98,
+          "target": 128.63,
+          "percentTarget": 93.04
+        },
+        "cc": {
+          "today": 86.77,
+          "wtd": -0.55,
+          "mtd": 0.64,
+          "ytd": 24.14,
+          "yoy": 67.06,
+          "target": 89.88,
+          "percentTarget": 96.54
+        },
+        "micro": {
+          "today": 51.01,
+          "wtd": -1.44,
+          "mtd": -4.13,
+          "ytd": -8.53,
+          "yoy": 62.45,
+          "target": 51.33,
+          "percentTarget": 99.37
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 6,
+          "target": 6,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 8,
+          "target": 9,
+          "percentTarget": 88.89
+        },
+        "bookingKSM": {
+          "today": 13,
+          "target": 13,
+          "percentTarget": 100
+        },
+        "bookingCC": {
+          "today": 32,
+          "target": 36,
+          "percentTarget": 88.89
+        },
+        "bookingMicro": {
+          "today": 19,
+          "target": 19,
+          "percentTarget": 100
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 43,
+        "target": 52,
+        "percentTarget": 82.69
+      },
+      "turunan": {
+        "today": 75,
+        "target": 88,
+        "percentTarget": 85.23
+      },
+      "familyTree": {
+        "today": 7,
+        "target": 6,
+        "percentTarget": 116.67
+      },
+      "warungViral": {
+        "today": 81,
+        "target": 84,
+        "percentTarget": 96.43
+      },
+      "spbu": {
+        "today": 11,
+        "target": 11,
+        "percentTarget": 100
+      },
+      "kdkmp": {
+        "today": 45,
+        "target": 45,
+        "percentTarget": 100
+      },
+      "sppg": {
+        "today": 40,
+        "target": 36,
+        "percentTarget": 111.11
+      },
+      "billReminder": {
+        "today": 93,
+        "target": 106,
+        "percentTarget": 87.74
+      }
+    }
+  },
+  {
+    "code": "12428",
+    "class": "B.4",
+    "name": "Jakarta Kota Kasablanka",
+    "bpa": {
+      "cm": 4.5,
+      "nii": 3,
+      "assetSpread": 1,
+      "liabilitiesSpread": 0.8,
+      "fbi": 1.2
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 40.54,
+          "wtd": -0.41,
+          "mtd": -1.09,
+          "ytd": 1.03,
+          "yoy": 0.02,
+          "target": 38.6,
+          "percentTarget": 105.03
+        },
+        "giro": {
+          "today": 57.67,
+          "wtd": 1.73,
+          "mtd": -2.23,
+          "ytd": -0.99,
+          "yoy": -1.49,
+          "target": 54.58,
+          "percentTarget": 105.65
+        },
+        "deposito": {
+          "today": 86.15,
+          "wtd": 1.2,
+          "mtd": -1.32,
+          "ytd": 6.94,
+          "yoy": 8.24,
+          "target": 96.82,
+          "percentTarget": 88.97
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 110,
+          "target": 108,
+          "percentTarget": 101.85
+        },
+        "newCifGiro": {
+          "today": 12,
+          "target": 14,
+          "percentTarget": 85.71
+        },
+        "newCifTabunganBisnis": {
+          "today": 32,
+          "target": 32,
+          "percentTarget": 100
+        },
+        "newToPriority": {
+          "today": 7,
+          "target": 9,
+          "percentTarget": 77.78
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 293.07,
+          "wtd": 2.29,
+          "mtd": 2.49,
+          "ytd": 20.32,
+          "yoy": 29.79,
+          "target": 316.19,
+          "percentTarget": 92.69
+        },
+        "cl": {
+          "today": 164.6,
+          "wtd": -0.79,
+          "mtd": 4.99,
+          "ytd": 4.29,
+          "yoy": 46.15,
+          "target": 176.37,
+          "percentTarget": 93.33
+        },
+        "ksm": {
+          "today": 109.82,
+          "wtd": 1.89,
+          "mtd": 9.36,
+          "ytd": 31.55,
+          "yoy": -11.73,
+          "target": 119.44,
+          "percentTarget": 91.94
+        },
+        "cc": {
+          "today": 76.45,
+          "wtd": -0.54,
+          "mtd": -4.79,
+          "ytd": 39.7,
+          "yoy": 9.27,
+          "target": 78.89,
+          "percentTarget": 96.9
+        },
+        "micro": {
+          "today": 58.5,
+          "wtd": -0.93,
+          "mtd": 5.65,
+          "ytd": -8.07,
+          "yoy": 12.15,
+          "target": 58.68,
+          "percentTarget": 99.7
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 6,
+          "target": 7,
+          "percentTarget": 85.71
+        },
+        "bookingCL": {
+          "today": 8,
+          "target": 8,
+          "percentTarget": 100
+        },
+        "bookingKSM": {
+          "today": 14,
+          "target": 15,
+          "percentTarget": 93.33
+        },
+        "bookingCC": {
+          "today": 28,
+          "target": 33,
+          "percentTarget": 84.85
+        },
+        "bookingMicro": {
+          "today": 20,
+          "target": 20,
+          "percentTarget": 100
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 29,
+        "target": 24,
+        "percentTarget": 120.83
+      },
+      "turunan": {
+        "today": 101,
+        "target": 114,
+        "percentTarget": 88.6
+      },
+      "familyTree": {
+        "today": 31,
+        "target": 32,
+        "percentTarget": 96.88
+      },
+      "warungViral": {
+        "today": 79,
+        "target": 99,
+        "percentTarget": 79.8
+      },
+      "spbu": {
+        "today": 13,
+        "target": 11,
+        "percentTarget": 118.18
+      },
+      "kdkmp": {
+        "today": 16,
+        "target": 13,
+        "percentTarget": 123.08
+      },
+      "sppg": {
+        "today": 60,
+        "target": 53,
+        "percentTarget": 113.21
+      },
+      "billReminder": {
+        "today": 340,
+        "target": 314,
+        "percentTarget": 108.28
+      }
+    }
+  },
+  {
+    "code": "12429",
+    "class": "B.4",
+    "name": "Jakarta Menara Kuningan",
+    "bpa": {
+      "cm": 3.9,
+      "nii": 2.6,
+      "assetSpread": 0.9,
+      "liabilitiesSpread": 0.7,
+      "fbi": 1
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 44.98,
+          "wtd": 1.14,
+          "mtd": 1.71,
+          "ytd": -2.93,
+          "yoy": 0.36,
+          "target": 41.99,
+          "percentTarget": 107.12
+        },
+        "giro": {
+          "today": 51.36,
+          "wtd": 0.73,
+          "mtd": -1.15,
+          "ytd": -2.7,
+          "yoy": 0.29,
+          "target": 53.97,
+          "percentTarget": 95.16
+        },
+        "deposito": {
+          "today": 65.41,
+          "wtd": 1.57,
+          "mtd": 1.11,
+          "ytd": 4.47,
+          "yoy": 3.12,
+          "target": 60.41,
+          "percentTarget": 108.29
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 100,
+          "target": 110,
+          "percentTarget": 90.91
+        },
+        "newCifGiro": {
+          "today": 18,
+          "target": 18,
+          "percentTarget": 100
+        },
+        "newCifTabunganBisnis": {
+          "today": 9,
+          "target": 10,
+          "percentTarget": 90
+        },
+        "newToPriority": {
+          "today": 3,
+          "target": 4,
+          "percentTarget": 75
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 299.77,
+          "wtd": -0.43,
+          "mtd": 7.16,
+          "ytd": 33.21,
+          "yoy": 31.5,
+          "target": 326.86,
+          "percentTarget": 91.71
+        },
+        "cl": {
+          "today": 151.07,
+          "wtd": 2.45,
+          "mtd": 7.18,
+          "ytd": 27.84,
+          "yoy": -1.75,
+          "target": 161.17,
+          "percentTarget": 93.73
+        },
+        "ksm": {
+          "today": 106.69,
+          "wtd": -0.79,
+          "mtd": -3.2,
+          "ytd": 4.44,
+          "yoy": 39.48,
+          "target": 107.05,
+          "percentTarget": 99.67
+        },
+        "cc": {
+          "today": 82.36,
+          "wtd": 1.68,
+          "mtd": -3.21,
+          "ytd": 30.05,
+          "yoy": 48,
+          "target": 89.13,
+          "percentTarget": 92.41
+        },
+        "micro": {
+          "today": 52.07,
+          "wtd": 2.3,
+          "mtd": 7.09,
+          "ytd": 26.09,
+          "yoy": 66.5,
+          "target": 56.23,
+          "percentTarget": 92.6
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 6,
+          "target": 6,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 11,
+          "target": 11,
+          "percentTarget": 100
+        },
+        "bookingKSM": {
+          "today": 10,
+          "target": 10,
+          "percentTarget": 100
+        },
+        "bookingCC": {
+          "today": 29,
+          "target": 34,
+          "percentTarget": 85.29
+        },
+        "bookingMicro": {
+          "today": 22,
+          "target": 25,
+          "percentTarget": 88
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 46,
+        "target": 38,
+        "percentTarget": 121.05
+      },
+      "turunan": {
+        "today": 89,
+        "target": 88,
+        "percentTarget": 101.14
+      },
+      "familyTree": {
+        "today": 29,
+        "target": 29,
+        "percentTarget": 100
+      },
+      "warungViral": {
+        "today": 88,
+        "target": 103,
+        "percentTarget": 85.44
+      },
+      "spbu": {
+        "today": 8,
+        "target": 9,
+        "percentTarget": 88.89
+      },
+      "kdkmp": {
+        "today": 39,
+        "target": 43,
+        "percentTarget": 90.7
+      },
+      "sppg": {
+        "today": 41,
+        "target": 38,
+        "percentTarget": 107.89
+      },
+      "billReminder": {
+        "today": 239,
+        "target": 276,
+        "percentTarget": 86.59
+      }
+    }
+  },
+  {
+    "code": "12431",
+    "class": "B.4",
+    "name": "Jakarta Kementerian Kesehatan",
+    "bpa": {
+      "cm": 4.2,
+      "nii": 2.8,
+      "assetSpread": 0.9,
+      "liabilitiesSpread": 0.8,
+      "fbi": 1.1
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 48.25,
+          "wtd": -0.81,
+          "mtd": -0.39,
+          "ytd": 4.08,
+          "yoy": -6.92,
+          "target": 57.45,
+          "percentTarget": 83.99
+        },
+        "giro": {
+          "today": 61.93,
+          "wtd": 1.75,
+          "mtd": -2.38,
+          "ytd": 1.34,
+          "yoy": -4.93,
+          "target": 70.85,
+          "percentTarget": 87.41
+        },
+        "deposito": {
+          "today": 91.2,
+          "wtd": 1.64,
+          "mtd": 0.89,
+          "ytd": 1.68,
+          "yoy": 5.21,
+          "target": 98.33,
+          "percentTarget": 92.75
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 20,
+          "target": 20,
+          "percentTarget": 100
+        },
+        "newCifGiro": {
+          "today": 14,
+          "target": 16,
+          "percentTarget": 87.5
+        },
+        "newCifTabunganBisnis": {
+          "today": 23,
+          "target": 27,
+          "percentTarget": 85.19
+        },
+        "newToPriority": {
+          "today": 9,
+          "target": 9,
+          "percentTarget": 100
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 266.79,
+          "wtd": -1.6,
+          "mtd": 0.56,
+          "ytd": 26.54,
+          "yoy": 77.69,
+          "target": 279.32,
+          "percentTarget": 95.52
+        },
+        "cl": {
+          "today": 150.85,
+          "wtd": -0.31,
+          "mtd": -2,
+          "ytd": 23.16,
+          "yoy": 58.72,
+          "target": 163.41,
+          "percentTarget": 92.32
+        },
+        "ksm": {
+          "today": 114.12,
+          "wtd": 2.83,
+          "mtd": 1.81,
+          "ytd": 24.55,
+          "yoy": 28.47,
+          "target": 115.29,
+          "percentTarget": 98.99
+        },
+        "cc": {
+          "today": 81.66,
+          "wtd": -0.78,
+          "mtd": -3.56,
+          "ytd": 27.21,
+          "yoy": -6.22,
+          "target": 82.84,
+          "percentTarget": 98.58
+        },
+        "micro": {
+          "today": 54.54,
+          "wtd": 2.94,
+          "mtd": -2.03,
+          "ytd": 14.69,
+          "yoy": -6.52,
+          "target": 58.25,
+          "percentTarget": 93.64
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 7,
+          "target": 7,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 8,
+          "target": 8,
+          "percentTarget": 100
+        },
+        "bookingKSM": {
+          "today": 13,
+          "target": 15,
+          "percentTarget": 86.67
+        },
+        "bookingCC": {
+          "today": 25,
+          "target": 27,
+          "percentTarget": 92.59
+        },
+        "bookingMicro": {
+          "today": 17,
+          "target": 18,
+          "percentTarget": 94.44
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 30,
+        "target": 30,
+        "percentTarget": 100
+      },
+      "turunan": {
+        "today": 52,
+        "target": 49,
+        "percentTarget": 106.12
+      },
+      "familyTree": {
+        "today": 15,
+        "target": 19,
+        "percentTarget": 78.95
+      },
+      "warungViral": {
+        "today": 107,
+        "target": 129,
+        "percentTarget": 82.95
+      },
+      "spbu": {
+        "today": 5,
+        "target": 4,
+        "percentTarget": 125
+      },
+      "kdkmp": {
+        "today": 20,
+        "target": 24,
+        "percentTarget": 83.33
+      },
+      "sppg": {
+        "today": 28,
+        "target": 26,
+        "percentTarget": 107.69
+      },
+      "billReminder": {
+        "today": 116,
+        "target": 130,
+        "percentTarget": 89.23
+      }
+    }
+  },
+  {
+    "code": "12432",
+    "class": "B.4",
+    "name": "Jakarta Menara Cyber 2",
+    "bpa": {
+      "cm": 3.6,
+      "nii": 2.4,
+      "assetSpread": 0.8,
+      "liabilitiesSpread": 0.7,
+      "fbi": 1
+    },
+    "funding": {
+      "lagging": {
+        "tabungan": {
+          "today": 41.46,
+          "wtd": -0.35,
+          "mtd": 0.82,
+          "ytd": -2.91,
+          "yoy": 2.59,
+          "target": 46.8,
+          "percentTarget": 88.6
+        },
+        "giro": {
+          "today": 58.8,
+          "wtd": -0.74,
+          "mtd": -1.69,
+          "ytd": -4.34,
+          "yoy": 4.77,
+          "target": 61.67,
+          "percentTarget": 95.35
+        },
+        "deposito": {
+          "today": 76.46,
+          "wtd": 1.32,
+          "mtd": -2.95,
+          "ytd": 3.64,
+          "yoy": -9.4,
+          "target": 75.41,
+          "percentTarget": 101.38
+        }
+      },
+      "leading": {
+        "newCifTabungan": {
+          "today": 23,
+          "target": 23,
+          "percentTarget": 100
+        },
+        "newCifGiro": {
+          "today": 15,
+          "target": 16,
+          "percentTarget": 93.75
+        },
+        "newCifTabunganBisnis": {
+          "today": 6,
+          "target": 8,
+          "percentTarget": 75
+        },
+        "newToPriority": {
+          "today": 8,
+          "target": 9,
+          "percentTarget": 88.89
+        }
+      }
+    },
+    "kredit": {
+      "lagging": {
+        "sme": {
+          "today": 287.6,
+          "wtd": 2.94,
+          "mtd": 3.48,
+          "ytd": 6.04,
+          "yoy": 26.09,
+          "target": 294.04,
+          "percentTarget": 97.81
+        },
+        "cl": {
+          "today": 152.72,
+          "wtd": -1.73,
+          "mtd": 1.54,
+          "ytd": 1.68,
+          "yoy": -13.86,
+          "target": 162.16,
+          "percentTarget": 94.18
+        },
+        "ksm": {
+          "today": 114.81,
+          "wtd": 2.76,
+          "mtd": -3.52,
+          "ytd": 5.29,
+          "yoy": 52.69,
+          "target": 118.31,
+          "percentTarget": 97.04
+        },
+        "cc": {
+          "today": 79.67,
+          "wtd": 0.52,
+          "mtd": 7.52,
+          "ytd": -3.39,
+          "yoy": 29.94,
+          "target": 80.85,
+          "percentTarget": 98.54
+        },
+        "micro": {
+          "today": 58.1,
+          "wtd": 2.87,
+          "mtd": -0.6,
+          "ytd": 19.13,
+          "yoy": 57.58,
+          "target": 60.52,
+          "percentTarget": 96
+        }
+      },
+      "leading": {
+        "bookingSME": {
+          "today": 6,
+          "target": 6,
+          "percentTarget": 100
+        },
+        "bookingCL": {
+          "today": 10,
+          "target": 11,
+          "percentTarget": 90.91
+        },
+        "bookingKSM": {
+          "today": 12,
+          "target": 13,
+          "percentTarget": 92.31
+        },
+        "bookingCC": {
+          "today": 29,
+          "target": 29,
+          "percentTarget": 100
+        },
+        "bookingMicro": {
+          "today": 18,
+          "target": 21,
+          "percentTarget": 85.71
+        }
+      }
+    },
+    "ekosistem": {
+      "bodBoc": {
+        "today": 51,
+        "target": 55,
+        "percentTarget": 92.73
+      },
+      "turunan": {
+        "today": 29,
+        "target": 32,
+        "percentTarget": 90.63
+      },
+      "familyTree": {
+        "today": 23,
+        "target": 24,
+        "percentTarget": 95.83
+      },
+      "warungViral": {
+        "today": 89,
+        "target": 86,
+        "percentTarget": 103.49
+      },
+      "spbu": {
+        "today": 7,
+        "target": 8,
+        "percentTarget": 87.5
+      },
+      "kdkmp": {
+        "today": 47,
+        "target": 40,
+        "percentTarget": 117.5
+      },
+      "sppg": {
+        "today": 42,
+        "target": 41,
+        "percentTarget": 102.44
+      },
+      "billReminder": {
+        "today": 134,
+        "target": 141,
+        "percentTarget": 95.04
+      }
+    }
+  }
+]

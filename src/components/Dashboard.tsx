@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { branches, getAreaTotal, Branch } from '../data/mockData';
+import { branches, getAreaTotal, Branch, positionDateTexts } from '../data/MasterData';
 import { 
   BarChart, 
   Bar, 
@@ -52,6 +52,8 @@ export function Dashboard() {
     return branches.filter(b => b.code === selectedBranchCode);
   }, [selectedBranchCode]);
 
+  const topN = selectedBranchCode === 'class-B.1' ? 2 : (selectedBranchCode.startsWith('class-') ? 3 : 5);
+
   const currentData: Branch = useMemo(() => {
     if (selectedBranchCode === 'all') return areaTotal;
     if (selectedBranchCode.startsWith('class-')) {
@@ -91,38 +93,40 @@ export function Dashboard() {
       ];
     }
     
-    // If 'all' or class is selected, show top/bottom 5 branches by chartMetric
+    // If 'all' or class is selected, show top/bottom N branches by chartMetric
     let sorted = [...filteredBranches].sort((a, b) => (b[chartMetric] as number) - (a[chartMetric] as number));
     
     let result: any[] = [];
     if (chartType === 'top') {
-      result = sorted.slice(0, 5).map(b => ({
+      result = sorted.slice(0, topN).map(b => ({
         name: b.name.replace('Jakarta ', ''),
         [chartMetric]: b[chartMetric],
         fill: '#003D79'
       }));
     } else if (chartType === 'bottom') {
-      result = sorted.slice(-5).reverse().map(b => ({
+      // Bottom only filter: reverse to show lowest on the left, highest on the right
+      result = sorted.slice(-topN).reverse().map(b => ({
         name: b.name.replace('Jakarta ', ''),
         [chartMetric]: b[chartMetric],
         fill: '#F43F5E'
       }));
     } else {
-      const top5 = sorted.slice(0, 5).map(b => ({
+      const topData = sorted.slice(0, topN).map(b => ({
         name: b.name.replace('Jakarta ', ''),
         [chartMetric]: b[chartMetric],
         code: b.code,
         fill: '#003D79'
       }));
-      const bottom5 = sorted.slice(-5).reverse().map(b => ({
+      // Both filter: don't reverse bottom, keep descending order so highest bottom is next to lowest top
+      const bottomData = sorted.slice(-topN).map(b => ({
         name: b.name.replace('Jakarta ', ''),
         [chartMetric]: b[chartMetric],
         code: b.code,
         fill: '#F43F5E'
       }));
       
-      const combined = [...top5];
-      bottom5.forEach(b => {
+      const combined = [...topData];
+      bottomData.forEach(b => {
         if (!combined.find(c => c.code === b.code)) {
           combined.push(b);
         }
@@ -131,7 +135,7 @@ export function Dashboard() {
     }
     
     return result;
-  }, [currentData, selectedBranchCode, chartType, chartMetric]);
+  }, [currentData, selectedBranchCode, chartType, chartMetric, filteredBranches]);
 
   const sortedBranches = useMemo(() => {
     let sortableBranches = [...filteredBranches];
@@ -147,7 +151,7 @@ export function Dashboard() {
       });
     }
     return sortableBranches;
-  }, [sortConfig]);
+  }, [filteredBranches, sortConfig]);
 
   const requestSort = (key: keyof Branch) => {
     let direction: 'asc' | 'desc' = 'asc';
@@ -188,6 +192,7 @@ export function Dashboard() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h2 className="text-2xl font-bold text-[#003D79]">Branch Profitability Analysis</h2>
+            <p className="text-xs text-slate-500 italic mt-1">{positionDateTexts.bpa}</p>
           </div>
           
           <div className="bg-white p-2 rounded-lg shadow-sm border border-slate-200 flex items-center">
@@ -268,7 +273,7 @@ export function Dashboard() {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
               <h3 className="text-lg font-bold text-slate-800">
                 {selectedBranchCode === 'all' || selectedBranchCode.startsWith('class-')
-                  ? `${chartType === 'top' ? 'Top 5' : chartType === 'bottom' ? 'Bottom 5' : 'Top & Bottom 5'} Cabang by ${chartMetric.toUpperCase()}` 
+                  ? `${chartType === 'top' ? `Top ${topN}` : chartType === 'bottom' ? `Bottom ${topN}` : `Top & Bottom ${topN}`} Cabang by ${chartMetric.toUpperCase()}` 
                   : `Komposisi ${getTableTitle()}`}
               </h3>
               
@@ -279,9 +284,9 @@ export function Dashboard() {
                     value={chartType}
                     onChange={(e) => setChartType(e.target.value as 'top' | 'bottom' | 'both')}
                   >
-                    <option value="top">Top 5</option>
-                    <option value="bottom">Bottom 5</option>
-                    <option value="both">Top & Bottom 5</option>
+                    <option value="top">Top {topN}</option>
+                    <option value="bottom">Bottom {topN}</option>
+                    <option value="both">Top & Bottom {topN}</option>
                   </select>
                   <select 
                     className="bg-slate-50 border border-slate-200 text-sm rounded-md py-1 px-2 outline-none focus:ring-2 focus:ring-[#003D79]"

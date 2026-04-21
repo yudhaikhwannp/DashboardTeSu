@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import { Menu } from 'lucide-react';
 import { Sidebar } from './components/Sidebar';
 import { Dashboard } from './components/Dashboard';
 import { FundingDashboard } from './components/FundingDashboard';
@@ -12,22 +13,43 @@ import { EkosistemRegionDashboard } from './components/EkosistemRegionDashboard'
 
 export default function App() {
   const [activeMenu, setActiveMenu] = useState('bpa');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen w-full bg-slate-50 overflow-hidden font-sans">
-      <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+    <div className="flex h-screen w-full bg-slate-50 overflow-hidden font-sans relative">
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-slate-900/50 z-20 md:hidden" 
+          onClick={() => setIsSidebarOpen(false)} 
+        />
+      )}
       
-      <div className="flex-1 flex flex-col min-w-0">
+      {/* Sidebar Wrapper */}
+      <div className={`fixed inset-y-0 left-0 z-30 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <Sidebar activeMenu={activeMenu} setActiveMenu={(menu) => {
+          setActiveMenu(menu);
+          setIsSidebarOpen(false);
+        }} />
+      </div>
+      
+      <div className="flex-1 flex flex-col min-w-0 h-full">
         {/* Global Header */}
-        <div className="px-8 pt-6 pb-2 shrink-0">
-          <div className="bg-gradient-to-r from-[#003D79] to-blue-600 rounded-full px-8 py-4 shadow-md flex items-center">
-            <h1 className="text-xl font-bold text-white tracking-wide">
-              Selamat Datang di Dashboard Area Jakarta Tebet Supomo!
+        <div className="px-4 md:px-8 pt-4 md:pt-6 pb-2 shrink-0">
+          <div className="bg-gradient-to-r from-[#003D79] to-blue-600 rounded-2xl md:rounded-full px-4 md:px-8 py-3 md:py-4 shadow-md flex items-center gap-3">
+            <button 
+              className="md:hidden text-white hover:bg-white/20 p-1.5 rounded-lg transition-colors"
+              onClick={() => setIsSidebarOpen(true)}
+            >
+              <Menu size={24} />
+            </button>
+            <h1 className="text-sm md:text-xl font-bold text-white tracking-wide truncate">
+              Selamat Datang di Dashboard Area!
             </h1>
           </div>
         </div>
 
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1 overflow-hidden h-full">
           {activeMenu === 'bpa' ? (
             <Dashboard />
           ) : activeMenu === 'funding' ? (

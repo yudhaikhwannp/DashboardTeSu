@@ -9,6 +9,7 @@ import {
   Calendar
 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { sidebarDateText } from '../data/MasterData';
 
 const menuItems = [
   { id: 'bpa', label: 'Branch Profitability Analysis', icon: BarChart3 },
@@ -45,7 +46,7 @@ export function Sidebar({ activeMenu, setActiveMenu }: SidebarProps) {
         
         <div className="flex items-center gap-2 text-blue-100 mb-6 px-4 py-3 bg-white/10 rounded-lg text-sm font-medium">
           <Calendar size={16} />
-          <span>Selasa, 14 April 2026</span>
+          <span>{sidebarDateText}</span>
         </div>
 
         <nav className="space-y-2">
