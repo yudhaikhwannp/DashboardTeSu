@@ -13,7 +13,7 @@ export function Login({ onSuccess }: LoginProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!password.trim()) {
-      setError('Kode rahasia tidak boleh kosong');
+      setError('Password tidak boleh kosong');
       return;
     }
 
@@ -35,7 +35,7 @@ export function Login({ onSuccess }: LoginProps) {
         localStorage.setItem('dashboard_auth', 'authenticated');
         onSuccess();
       } else {
-        setError(data.message || 'Kode rahasia salah');
+        setError(data.message || 'Password salah');
       }
     } catch (err) {
       setError('Gagal terhubung ke server');
@@ -77,7 +77,7 @@ export function Login({ onSuccess }: LoginProps) {
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-slate-700">
-                Kode Rahasia (Secret Code)
+                Password
               </label>
               <div className="mt-2 relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -91,7 +91,7 @@ export function Login({ onSuccess }: LoginProps) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="appearance-none block w-full pl-10 px-3 py-3 border border-slate-300 rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-[#003D79] focus:border-[#003D79] sm:text-sm"
-                  placeholder="Masukkan kode rahasia Vercel..."
+                  placeholder="Masukkan password (hubungi PIC 124 untuk mendapatkan password)..."
                 />
               </div>
             </div>
