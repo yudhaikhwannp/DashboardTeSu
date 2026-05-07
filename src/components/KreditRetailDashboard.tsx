@@ -82,6 +82,11 @@ export function KreditRetailDashboard() {
           ksm: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
           cc: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
           micro: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+          smeReferral: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+          clBookingRegular: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+          clBookingFLPP: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+          ccAplikasi: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+          kkb: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
         },
         leading: {
           bookingSME: { today: 0, target: 0, percentTarget: 0 },
@@ -89,6 +94,7 @@ export function KreditRetailDashboard() {
           bookingKSM: { today: 0, target: 0, percentTarget: 0 },
           bookingCC: { today: 0, target: 0, percentTarget: 0 },
           bookingMicro: { today: 0, target: 0, percentTarget: 0 },
+          bookingKKB: { today: 0, target: 0, percentTarget: 0 }
         }
       };
 

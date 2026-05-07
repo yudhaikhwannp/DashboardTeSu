@@ -1,3 +1,17 @@
+export type SummaryLaggingMetric = { today: number; target: number; percentTarget: number; wtd?: number; mtd?: number; ytd?: number; yoy?: number; };
+export type SummaryTransaction = {
+  newEDC: LeadingMetric;
+  svEDC: FundingLagging;
+  newLVM: LeadingMetric;
+  svLvmMTD: FundingLagging;
+  newLivinUreg: LeadingMetric;
+  newUregKopra: LeadingMetric;
+};
+export type SummaryPrioritas = {
+  ntp: LeadingMetric;
+  ntb: LeadingMetric;
+};
+
 export type Branch = { code: string; class: string; name: string; cm: number; nii: number; assetSpread: number; liabilitiesSpread: number; fbi: number; };
 export type FundingLagging = { today: number; wtd: number; mtd: number; ytd: number; yoy: number; target: number; percentTarget: number; };
 export type LeadingMetric = { today: number; target: number; percentTarget: number; };
@@ -7,10 +21,11 @@ export type KreditMetrics = { today: number; wtd: number; mtd: number; ytd: numb
 export type KreditLeadingMetrics = { today: number; target: number; percentTarget: number; };
 export type EkosistemMetrics = { today: number; target: number; percentTarget: number; };
 export interface EkosistemBranch { code: string; name: string; class: string; ekosistem: { bodBocSME: EkosistemMetrics; bodBocCMC: EkosistemMetrics; bodBocCB: EkosistemMetrics; familyTree: EkosistemMetrics; warungViral: EkosistemMetrics; spbu: EkosistemMetrics; kdkmp: EkosistemMetrics; sppg: EkosistemMetrics; billReminder: EkosistemMetrics; }; }
-export type KreditBranch = { code: string; class: string; name: string; lagging: { sme: KreditMetrics; cl: KreditMetrics; ksm: KreditMetrics; cc: KreditMetrics; micro: KreditMetrics; }; leading: { bookingSME: KreditLeadingMetrics; bookingCL: KreditLeadingMetrics; bookingKSM: KreditLeadingMetrics; bookingCC: KreditLeadingMetrics; bookingMicro: KreditLeadingMetrics; }; };
+export type KreditBranch = { code: string; class: string; name: string; lagging: { sme: KreditMetrics; smeReferral: KreditMetrics; cl: KreditMetrics; ksm: KreditMetrics; cc: KreditMetrics; micro: KreditMetrics; clBookingRegular: KreditMetrics; clBookingFLPP: KreditMetrics; ccAplikasi: KreditMetrics; kkb: KreditMetrics; }; leading: { bookingSME: KreditLeadingMetrics; bookingCL: KreditLeadingMetrics; bookingKSM: KreditLeadingMetrics; bookingCC: KreditLeadingMetrics; bookingMicro: KreditLeadingMetrics; bookingKKB: KreditLeadingMetrics; }; };
 
 export const sidebarDateText = "20 April 2026";
 export const positionDateTexts = {
+  summary: "Posisi Data: Senin, 20 April 2026 Pukul 08:30 WIB",
   bpa: "Posisi Data: Senin, 20 April 2026 Pukul 08:30 WIB",
   funding: "Posisi Data: Senin, 20 April 2026 Pukul 09:15 WIB",
   kredit: "Posisi Data: Senin, 20 April 2026 Pukul 10:45 WIB",
@@ -21,8 +36,10 @@ export interface UnifiedBranch {
   code: string; class: string; name: string;
   bpa: { cm: number; nii: number; assetSpread: number; liabilitiesSpread: number; fbi: number; };
   funding: { lagging: { tabungan: FundingLagging; giro: FundingLagging; deposito: FundingLagging; }; leading: FundingLeading; };
-  kredit: { lagging: { sme: KreditMetrics; cl: KreditMetrics; ksm: KreditMetrics; cc: KreditMetrics; micro: KreditMetrics; }; leading: { bookingSME: KreditLeadingMetrics; bookingCL: KreditLeadingMetrics; bookingKSM: KreditLeadingMetrics; bookingCC: KreditLeadingMetrics; bookingMicro: KreditLeadingMetrics; }; };
+  kredit: { lagging: KreditBranch['lagging']; leading: KreditBranch['leading']; };
   ekosistem: EkosistemBranch["ekosistem"];
+  transaction: SummaryTransaction;
+  prioritas: SummaryPrioritas;
 }
 
 // INI ADALAH SUMBER DATA TERPADU UNTUK SELURUH HALAMAN
@@ -41,7 +58,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 108.66,
+        "today": 434800,
           "wtd": 2.14,
           "mtd": -5.28,
           "ytd": -5.79,
@@ -50,7 +67,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 110.55
         },
         "giro": {
-          "today": 200.24,
+        "today": 349900,
           "wtd": 5.75,
           "mtd": -3.48,
           "ytd": 7.61,
@@ -70,12 +87,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 68,
+        "today": 17,
           "target": 75,
           "percentTarget": 90.67
         },
         "newCifGiro": {
-          "today": 22,
+        "today": 0,
           "target": 26,
           "percentTarget": 84.62
         },
@@ -94,7 +111,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1679.02,
+        "today": 12500,
           "wtd": 0.05,
           "mtd": -0.87,
           "ytd": 27.27,
@@ -103,7 +120,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.43
         },
         "cl": {
-          "today": 1048.96,
+        "today": 67800,
           "wtd": -0.02,
           "mtd": 2.42,
           "ytd": -8.8,
@@ -112,7 +129,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.54
         },
         "ksm": {
-          "today": 635.06,
+        "today": 47600,
           "wtd": 2.43,
           "mtd": 8.98,
           "ytd": -4.87,
@@ -121,7 +138,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.2
         },
         "cc": {
-          "today": 461.01,
+        "today": 18400,
           "wtd": 1.92,
           "mtd": 1.63,
           "ytd": -0.07,
@@ -130,42 +147,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.79
         },
         "micro": {
-          "today": 300.4,
+        "today": 0,
           "wtd": -1.95,
           "mtd": -4.63,
           "ytd": 9.24,
           "yoy": 15.16,
           "target": 330.31,
           "percentTarget": 90.94
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 700, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 1, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 240, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 38,
+        "today": 0,
           "target": 43,
           "percentTarget": 88.37
         },
         "bookingCL": {
-          "today": 59,
+        "today": 0,
           "target": 61,
           "percentTarget": 96.72
         },
         "bookingKSM": {
-          "today": 66,
+        "today": 20,
           "target": 76,
           "percentTarget": 86.84
         },
         "bookingCC": {
-          "today": 181,
+        "today": 0,
           "target": 209,
           "percentTarget": 86.6
         },
         "bookingMicro": {
-          "today": 126,
+        "today": 0,
           "target": 145,
           "percentTarget": 86.9
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 1500, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 190, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 14, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -229,7 +265,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 101.27,
+        "today": 798300,
           "wtd": 1.71,
           "mtd": 0.32,
           "ytd": -0.15,
@@ -238,7 +274,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.14
         },
         "giro": {
-          "today": 141.27,
+        "today": 14227200,
           "wtd": 0.64,
           "mtd": 1.72,
           "ytd": -11.9,
@@ -258,12 +294,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 80,
+        "today": 4,
           "target": 84,
           "percentTarget": 95.24
         },
         "newCifGiro": {
-          "today": 19,
+        "today": 0,
           "target": 19,
           "percentTarget": 100
         },
@@ -282,7 +318,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1748.11,
+        "today": 84400,
           "wtd": 0.88,
           "mtd": 8.36,
           "ytd": 5.35,
@@ -291,7 +327,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.82
         },
         "cl": {
-          "today": 1050.71,
+        "today": 219300,
           "wtd": -1.23,
           "mtd": 0.12,
           "ytd": 39.49,
@@ -300,7 +336,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.26
         },
         "ksm": {
-          "today": 627.32,
+        "today": 63200,
           "wtd": -1.87,
           "mtd": -3.79,
           "ytd": 6.92,
@@ -309,7 +345,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.18
         },
         "cc": {
-          "today": 491.82,
+        "today": 46200,
           "wtd": 0.76,
           "mtd": 9.01,
           "ytd": 11.85,
@@ -318,42 +354,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.69
         },
         "micro": {
-          "today": 302.12,
+        "today": 0,
           "wtd": 1.98,
           "mtd": 0.6,
           "ytd": 30.75,
           "yoy": 9.74,
           "target": 303.21,
           "percentTarget": 99.64
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1320, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 34,
+        "today": 0,
           "target": 37,
           "percentTarget": 91.89
         },
         "bookingCL": {
-          "today": 50,
+        "today": 0,
           "target": 54,
           "percentTarget": 92.59
         },
         "bookingKSM": {
-          "today": 77,
+        "today": 200,
           "target": 82,
           "percentTarget": 93.9
         },
         "bookingCC": {
-          "today": 198,
+        "today": 0,
           "target": 222,
           "percentTarget": 89.19
         },
         "bookingMicro": {
-          "today": 126,
+        "today": 0,
           "target": 138,
           "percentTarget": 91.3
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 1000, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 990, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 11, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -417,7 +472,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 152.52,
+        "today": 478900,
           "wtd": -0.2,
           "mtd": -0.59,
           "ytd": 0.3,
@@ -426,7 +481,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 109.91
         },
         "giro": {
-          "today": 244.36,
+        "today": 867700,
           "wtd": 7.03,
           "mtd": -8.5,
           "ytd": 16.87,
@@ -446,12 +501,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 97,
+        "today": 51,
           "target": 94,
           "percentTarget": 103.19
         },
         "newCifGiro": {
-          "today": 6,
+        "today": 0,
           "target": 7,
           "percentTarget": 85.71
         },
@@ -470,7 +525,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1745.99,
+        "today": 251500,
           "wtd": -0.11,
           "mtd": -1.57,
           "ytd": 23.41,
@@ -479,7 +534,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.36
         },
         "cl": {
-          "today": 1021.3,
+        "today": 35300,
           "wtd": 0.51,
           "mtd": 7.22,
           "ytd": 20.25,
@@ -488,7 +543,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.71
         },
         "ksm": {
-          "today": 628.76,
+        "today": 65400.00000000001,
           "wtd": -0.45,
           "mtd": 2.6,
           "ytd": 18.35,
@@ -497,7 +552,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.02
         },
         "cc": {
-          "today": 469.67,
+        "today": 26700,
           "wtd": -1.42,
           "mtd": -3.43,
           "ytd": 19.58,
@@ -506,42 +561,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.28
         },
         "micro": {
-          "today": 335.97,
+        "today": 0,
           "wtd": 0.32,
           "mtd": -1.38,
           "ytd": 38.06,
           "yoy": -19.36,
           "target": 347.89,
           "percentTarget": 96.58
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 1, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 800, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 30,
+        "today": 0,
           "target": 31,
           "percentTarget": 96.77
         },
         "bookingCL": {
-          "today": 52,
+        "today": 0,
           "target": 56,
           "percentTarget": 92.86
         },
         "bookingKSM": {
-          "today": 86,
+        "today": 60,
           "target": 102,
           "percentTarget": 84.31
         },
         "bookingCC": {
-          "today": 184,
+        "today": 0,
           "target": 188,
           "percentTarget": 97.87
         },
         "bookingMicro": {
-          "today": 95,
+        "today": 0,
           "target": 102,
           "percentTarget": 93.14
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 3300, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 760, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 296, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -605,7 +679,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 99.09,
+        "today": 653400,
           "wtd": 1.61,
           "mtd": 4.78,
           "ytd": -0.52,
@@ -614,7 +688,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 101.82
         },
         "giro": {
-          "today": 151.56,
+        "today": 1646500,
           "wtd": 3.91,
           "mtd": 2.2,
           "ytd": 0.25,
@@ -634,12 +708,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 90,
+        "today": 21,
           "target": 85,
           "percentTarget": 105.88
         },
         "newCifGiro": {
-          "today": 17,
+        "today": 0,
           "target": 16,
           "percentTarget": 106.25
         },
@@ -658,7 +732,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1786.5,
+        "today": 25900,
           "wtd": 0.84,
           "mtd": 0.6,
           "ytd": 13.12,
@@ -667,7 +741,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.68
         },
         "cl": {
-          "today": 954.68,
+        "today": 37100,
           "wtd": 0.95,
           "mtd": -2.31,
           "ytd": 2.83,
@@ -676,7 +750,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.72
         },
         "ksm": {
-          "today": 658.68,
+        "today": 40900,
           "wtd": -1.14,
           "mtd": 5.02,
           "ytd": 12.72,
@@ -685,7 +759,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.37
         },
         "cc": {
-          "today": 473.11,
+        "today": 24900,
           "wtd": -0.85,
           "mtd": -1.01,
           "ytd": 0.39,
@@ -694,42 +768,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.64
         },
         "micro": {
-          "today": 306.56,
+        "today": 32610,
           "wtd": -1.65,
           "mtd": -4.95,
           "ytd": -8.71,
           "yoy": 54.1,
           "target": 310.68,
           "percentTarget": 98.68
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1200, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 37,
+        "today": 0,
           "target": 38,
           "percentTarget": 97.37
         },
         "bookingCL": {
-          "today": 56,
+        "today": 0,
           "target": 60,
           "percentTarget": 93.33
         },
         "bookingKSM": {
-          "today": 79,
+        "today": 0,
           "target": 90,
           "percentTarget": 87.78
         },
         "bookingCC": {
-          "today": 216,
+        "today": 0,
           "target": 226,
           "percentTarget": 95.58
         },
         "bookingMicro": {
-          "today": 92,
+        "today": 0,
           "target": 101,
           "percentTarget": 91.09
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 2200, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 1880, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 7, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -793,7 +886,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 113.75,
+        "today": 348900,
           "wtd": 0.67,
           "mtd": 1.25,
           "ytd": -0.56,
@@ -802,7 +895,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.98
         },
         "giro": {
-          "today": 157.71,
+        "today": 1838900,
           "wtd": 0.01,
           "mtd": 4.81,
           "ytd": -14.47,
@@ -822,12 +915,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 80,
+        "today": 1,
           "target": 85,
           "percentTarget": 94.12
         },
         "newCifGiro": {
-          "today": 23,
+        "today": 0,
           "target": 22,
           "percentTarget": 104.55
         },
@@ -846,7 +939,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1029.59,
+        "today": 7000,
           "wtd": -1.72,
           "mtd": -1.48,
           "ytd": -4.06,
@@ -855,7 +948,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.54
         },
         "cl": {
-          "today": 643.98,
+        "today": 96100,
           "wtd": 2.43,
           "mtd": 2.65,
           "ytd": -2.76,
@@ -864,7 +957,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.17
         },
         "ksm": {
-          "today": 405.82,
+        "today": 21800,
           "wtd": 1.27,
           "mtd": 8.63,
           "ytd": 13.09,
@@ -873,7 +966,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.3
         },
         "cc": {
-          "today": 343.21,
+        "today": 22100,
           "wtd": -0.1,
           "mtd": 6.48,
           "ytd": 20.46,
@@ -882,42 +975,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.18
         },
         "micro": {
-          "today": 228.26,
+        "today": 0,
           "wtd": 0.98,
           "mtd": -2.1,
           "ytd": 37.75,
           "yoy": 27.97,
           "target": 248.4,
           "percentTarget": 91.89
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1640, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 29,
+        "today": 0,
           "target": 34,
           "percentTarget": 85.29
         },
         "bookingCL": {
-          "today": 38,
+        "today": 0,
           "target": 42,
           "percentTarget": 90.48
         },
         "bookingKSM": {
-          "today": 47,
+        "today": 0,
           "target": 53,
           "percentTarget": 88.68
         },
         "bookingCC": {
-          "today": 135,
+        "today": 0,
           "target": 142,
           "percentTarget": 95.07
         },
         "bookingMicro": {
-          "today": 75,
+        "today": 0,
           "target": 89,
           "percentTarget": 84.27
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 1100, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 920, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 8, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -981,7 +1093,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 84,
+        "today": 410700,
           "wtd": -0.45,
           "mtd": 3.29,
           "ytd": 0.39,
@@ -990,7 +1102,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 102.47
         },
         "giro": {
-          "today": 122.06,
+        "today": 432200,
           "wtd": 3.16,
           "mtd": -2.19,
           "ytd": 1.44,
@@ -1010,12 +1122,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 54,
+        "today": 4,
           "target": 56,
           "percentTarget": 96.43
         },
         "newCifGiro": {
-          "today": 9,
+        "today": 0,
           "target": 10,
           "percentTarget": 90
         },
@@ -1034,7 +1146,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1184.42,
+        "today": 41300,
           "wtd": -0.91,
           "mtd": 0.35,
           "ytd": 4.6,
@@ -1043,7 +1155,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.81
         },
         "cl": {
-          "today": 611.86,
+        "today": 75200,
           "wtd": 1.98,
           "mtd": 0.87,
           "ytd": 10.57,
@@ -1052,7 +1164,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.61
         },
         "ksm": {
-          "today": 453.95,
+        "today": 50800,
           "wtd": 1.25,
           "mtd": 0.18,
           "ytd": 36.12,
@@ -1061,7 +1173,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.46
         },
         "cc": {
-          "today": 305.36,
+        "today": 26800,
           "wtd": 2.01,
           "mtd": 2.48,
           "ytd": -5.86,
@@ -1070,42 +1182,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.92
         },
         "micro": {
-          "today": 209.29,
+        "today": 34600,
           "wtd": 1.47,
           "mtd": 5.95,
           "ytd": 24.82,
           "yoy": 62.87,
           "target": 210.43,
           "percentTarget": 99.46
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1620, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 23,
+        "today": 0,
           "target": 27,
           "percentTarget": 85.19
         },
         "bookingCL": {
-          "today": 32,
+        "today": 0,
           "target": 34,
           "percentTarget": 94.12
         },
         "bookingKSM": {
-          "today": 51,
+        "today": 50,
           "target": 55,
           "percentTarget": 92.73
         },
         "bookingCC": {
-          "today": 128,
+        "today": 0,
           "target": 129,
           "percentTarget": 99.22
         },
         "bookingMicro": {
-          "today": 83,
+        "today": 0,
           "target": 99,
           "percentTarget": 83.84
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 700, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 5, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 2280, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 20, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -1169,7 +1300,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 81.76,
+        "today": 454500,
           "wtd": 0.81,
           "mtd": 4,
           "ytd": 1.28,
@@ -1178,7 +1309,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 111.01
         },
         "giro": {
-          "today": 132,
+        "today": 900900,
           "wtd": -0.67,
           "mtd": 2.25,
           "ytd": -9.27,
@@ -1198,12 +1329,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 44,
+        "today": 3,
           "target": 53,
           "percentTarget": 83.02
         },
         "newCifGiro": {
-          "today": 10,
+        "today": 0,
           "target": 10,
           "percentTarget": 100
         },
@@ -1222,7 +1353,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1084.72,
+        "today": 39000,
           "wtd": 0.26,
           "mtd": -2.42,
           "ytd": 39.61,
@@ -1231,7 +1362,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.47
         },
         "cl": {
-          "today": 652.65,
+        "today": 58100,
           "wtd": 2.03,
           "mtd": 8.74,
           "ytd": 16.62,
@@ -1240,7 +1371,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.19
         },
         "ksm": {
-          "today": 433.8,
+        "today": 20600,
           "wtd": -1.79,
           "mtd": 1.89,
           "ytd": 3.39,
@@ -1249,7 +1380,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.28
         },
         "cc": {
-          "today": 311.09,
+        "today": 20900,
           "wtd": 1.39,
           "mtd": 4.53,
           "ytd": -1.84,
@@ -1258,42 +1389,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.59
         },
         "micro": {
-          "today": 204.4,
+        "today": 0,
           "wtd": -0.12,
           "mtd": 6.42,
           "ytd": 16.08,
           "yoy": -16.65,
           "target": 218.83,
           "percentTarget": 93.4
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 950, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 29,
+        "today": 0,
           "target": 31,
           "percentTarget": 93.55
         },
         "bookingCL": {
-          "today": 36,
+        "today": 0,
           "target": 40,
           "percentTarget": 90
         },
         "bookingKSM": {
-          "today": 48,
+        "today": 0,
           "target": 50,
           "percentTarget": 96
         },
         "bookingCC": {
-          "today": 130,
+        "today": 0,
           "target": 144,
           "percentTarget": 90.28
         },
         "bookingMicro": {
-          "today": 75,
+        "today": 0,
           "target": 81,
           "percentTarget": 92.59
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 2100, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 4, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 1210, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 8, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -1357,7 +1507,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 64.5,
+        "today": 305100,
           "wtd": -0.1,
           "mtd": -0.5,
           "ytd": -0.78,
@@ -1366,7 +1516,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 85.35
         },
         "giro": {
-          "today": 125.91,
+        "today": 847300,
           "wtd": -2.16,
           "mtd": -1.47,
           "ytd": 6.62,
@@ -1386,12 +1536,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 23,
+        "today": 7,
           "target": 23,
           "percentTarget": 100
         },
         "newCifGiro": {
-          "today": 9,
+        "today": 0,
           "target": 9,
           "percentTarget": 100
         },
@@ -1410,7 +1560,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1100.07,
+        "today": 12200,
           "wtd": -1.13,
           "mtd": -3.73,
           "ytd": 6.85,
@@ -1419,7 +1569,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.33
         },
         "cl": {
-          "today": 630.96,
+        "today": 37100,
           "wtd": -1.83,
           "mtd": 7.24,
           "ytd": 14.87,
@@ -1428,7 +1578,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.07
         },
         "ksm": {
-          "today": 449.4,
+        "today": 14500,
           "wtd": -1.45,
           "mtd": 8.22,
           "ytd": -7.03,
@@ -1437,7 +1587,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.74
         },
         "cc": {
-          "today": 305.96,
+        "today": 19700,
           "wtd": 1.51,
           "mtd": 5.99,
           "ytd": 32.63,
@@ -1446,42 +1596,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.33
         },
         "micro": {
-          "today": 221.28,
+        "today": 25110,
           "wtd": -0.75,
           "mtd": 5.46,
           "ytd": 28.31,
           "yoy": 51.58,
           "target": 233.32,
           "percentTarget": 94.84
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1990, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 20,
+        "today": 0,
           "target": 20,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 42,
+        "today": 0,
           "target": 49,
           "percentTarget": 85.71
         },
         "bookingKSM": {
-          "today": 51,
+        "today": 0,
           "target": 53,
           "percentTarget": 96.23
         },
         "bookingCC": {
-          "today": 131,
+        "today": 0,
           "target": 134,
           "percentTarget": 97.76
         },
         "bookingMicro": {
-          "today": 63,
+        "today": 0,
           "target": 68,
           "percentTarget": 92.65
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 700, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 1440, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 9, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -1545,7 +1714,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 93.1,
+        "today": 230700,
           "wtd": -1.62,
           "mtd": -1.99,
           "ytd": -8.42,
@@ -1554,7 +1723,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 100.41
         },
         "giro": {
-          "today": 146.68,
+        "today": 319900,
           "wtd": 1.39,
           "mtd": 6.96,
           "ytd": 8.05,
@@ -1574,12 +1743,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 116,
+        "today": 8,
           "target": 125,
           "percentTarget": 92.8
         },
         "newCifGiro": {
-          "today": 7,
+        "today": 0,
           "target": 8,
           "percentTarget": 87.5
         },
@@ -1598,7 +1767,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1110.59,
+        "today": 69200,
           "wtd": 0.08,
           "mtd": 7.53,
           "ytd": 33.21,
@@ -1607,7 +1776,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.28
         },
         "cl": {
-          "today": 676.76,
+        "today": 42300,
           "wtd": -1.8,
           "mtd": -0.22,
           "ytd": 25.33,
@@ -1616,7 +1785,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.64
         },
         "ksm": {
-          "today": 448.82,
+        "today": 20100,
           "wtd": -0.26,
           "mtd": -0.18,
           "ytd": 25.01,
@@ -1625,7 +1794,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.68
         },
         "cc": {
-          "today": 338.88,
+        "today": 16400,
           "wtd": 1.87,
           "mtd": -1.56,
           "ytd": 39.19,
@@ -1634,42 +1803,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 90.96
         },
         "micro": {
-          "today": 213.23,
+        "today": 0,
           "wtd": 1.09,
           "mtd": -0.4,
           "ytd": -9.75,
           "yoy": 78.32,
           "target": 227.09,
           "percentTarget": 93.9
-        }
+        },
+        "smeReferral": { "today": 3000, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 3060, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 28,
+        "today": 0,
           "target": 33,
           "percentTarget": 84.85
         },
         "bookingCL": {
-          "today": 44,
+        "today": 0,
           "target": 44,
           "percentTarget": 100
         },
         "bookingKSM": {
-          "today": 48,
+        "today": 480,
           "target": 55,
           "percentTarget": 87.27
         },
         "bookingCC": {
-          "today": 136,
+        "today": 0,
           "target": 150,
           "percentTarget": 90.67
         },
         "bookingMicro": {
-          "today": 88,
+        "today": 0,
           "target": 104,
           "percentTarget": 84.62
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 3600, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 3, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 180, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 10, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 8, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -1733,7 +1921,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 85.18,
+        "today": 554900,
           "wtd": -1.44,
           "mtd": -1.28,
           "ytd": -6.2,
@@ -1742,7 +1930,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 90.79
         },
         "giro": {
-          "today": 109.53,
+        "today": 151200,
           "wtd": 1.43,
           "mtd": -0.01,
           "ytd": 9.87,
@@ -1762,12 +1950,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 116,
+        "today": 11,
           "target": 127,
           "percentTarget": 91.34
         },
         "newCifGiro": {
-          "today": 4,
+        "today": 0,
           "target": 4,
           "percentTarget": 100
         },
@@ -1786,7 +1974,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1144.03,
+        "today": 8900,
           "wtd": -1.79,
           "mtd": 4.28,
           "ytd": 19.11,
@@ -1795,7 +1983,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.35
         },
         "cl": {
-          "today": 611.33,
+        "today": 23200,
           "wtd": 1.76,
           "mtd": 7.26,
           "ytd": 0.52,
@@ -1804,7 +1992,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.38
         },
         "ksm": {
-          "today": 412.46,
+        "today": 21200,
           "wtd": 0.21,
           "mtd": -4.84,
           "ytd": 13.82,
@@ -1813,7 +2001,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.29
         },
         "cc": {
-          "today": 337.1,
+        "today": 27200,
           "wtd": 2.44,
           "mtd": 0.1,
           "ytd": 16.95,
@@ -1822,42 +2010,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.91
         },
         "micro": {
-          "today": 232.59,
+        "today": 29400,
           "wtd": 2.72,
           "mtd": 0.14,
           "ytd": 35.18,
           "yoy": 52.33,
           "target": 240.63,
           "percentTarget": 96.66
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 280, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 24,
+        "today": 0,
           "target": 26,
           "percentTarget": 92.31
         },
         "bookingCL": {
-          "today": 33,
+        "today": 0,
           "target": 37,
           "percentTarget": 89.19
         },
         "bookingKSM": {
-          "today": 51,
+        "today": 0,
           "target": 57,
           "percentTarget": 89.47
         },
         "bookingCC": {
-          "today": 107,
+        "today": 0,
           "target": 108,
           "percentTarget": 99.07
         },
         "bookingMicro": {
-          "today": 62,
+        "today": 0,
           "target": 71,
           "percentTarget": 87.32
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 600, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 620, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 23, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -1921,7 +2128,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 103.26,
+        "today": 325400,
           "wtd": -0.1,
           "mtd": 1.68,
           "ytd": -9.26,
@@ -1930,7 +2137,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 89.42
         },
         "giro": {
-          "today": 146.34,
+        "today": 563900,
           "wtd": 1.75,
           "mtd": 6.62,
           "ytd": 9.07,
@@ -1950,12 +2157,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 46,
+        "today": 2,
           "target": 47,
           "percentTarget": 97.87
         },
         "newCifGiro": {
-          "today": 14,
+        "today": 0,
           "target": 15,
           "percentTarget": 93.33
         },
@@ -1974,7 +2181,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1054.07,
+        "today": 600,
           "wtd": 1.91,
           "mtd": 3.15,
           "ytd": -4.02,
@@ -1983,7 +2190,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.36
         },
         "cl": {
-          "today": 678.78,
+        "today": 20100,
           "wtd": 0.11,
           "mtd": 1.52,
           "ytd": -5.55,
@@ -1992,7 +2199,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.71
         },
         "ksm": {
-          "today": 450,
+        "today": 60000,
           "wtd": -1.17,
           "mtd": 8.22,
           "ytd": 15.3,
@@ -2001,7 +2208,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.62
         },
         "cc": {
-          "today": 327.04,
+        "today": 14900,
           "wtd": 1.93,
           "mtd": 9.14,
           "ytd": 19.95,
@@ -2010,42 +2217,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.21
         },
         "micro": {
-          "today": 222.75,
+        "today": 20920,
           "wtd": 2.84,
           "mtd": 8.73,
           "ytd": 16.68,
           "yoy": -9.8,
           "target": 241.22,
           "percentTarget": 92.34
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 930, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 25,
+        "today": 0,
           "target": 29,
           "percentTarget": 86.21
         },
         "bookingCL": {
-          "today": 37,
+        "today": 0,
           "target": 40,
           "percentTarget": 92.5
         },
         "bookingKSM": {
-          "today": 52,
+        "today": 0,
           "target": 58,
           "percentTarget": 89.66
         },
         "bookingCC": {
-          "today": 143,
+        "today": 0,
           "target": 143,
           "percentTarget": 100
         },
         "bookingMicro": {
-          "today": 89,
+        "today": 0,
           "target": 95,
           "percentTarget": 93.68
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 2000, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 840, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 9, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -2109,7 +2335,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 72.74,
+        "today": 287900,
           "wtd": 0.19,
           "mtd": -3.61,
           "ytd": -3.55,
@@ -2118,7 +2344,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.76
         },
         "giro": {
-          "today": 110.42,
+        "today": 556300,
           "wtd": 3.14,
           "mtd": -4.6,
           "ytd": 0.91,
@@ -2138,12 +2364,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 117,
+        "today": 17,
           "target": 120,
           "percentTarget": 97.5
         },
         "newCifGiro": {
-          "today": 14,
+        "today": 0,
           "target": 16,
           "percentTarget": 87.5
         },
@@ -2162,7 +2388,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1160.13,
+        "today": 31700,
           "wtd": -0.58,
           "mtd": 3.8,
           "ytd": 9.58,
@@ -2171,7 +2397,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.66
         },
         "cl": {
-          "today": 634.25,
+        "today": 23600,
           "wtd": -1.12,
           "mtd": 4.34,
           "ytd": 22.71,
@@ -2180,7 +2406,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.15
         },
         "ksm": {
-          "today": 426.38,
+        "today": 20200,
           "wtd": -1.47,
           "mtd": 7.7,
           "ytd": -2.59,
@@ -2189,7 +2415,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.2
         },
         "cc": {
-          "today": 334.14,
+        "today": 20700,
           "wtd": -1.56,
           "mtd": 2.21,
           "ytd": 28.56,
@@ -2198,42 +2424,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.2
         },
         "micro": {
-          "today": 224.38,
+        "today": 0,
           "wtd": -0.03,
           "mtd": 2.02,
           "ytd": 15.46,
           "yoy": 73.78,
           "target": 235.37,
           "percentTarget": 95.33
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 940, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 28,
+        "today": 0,
           "target": 32,
           "percentTarget": 87.5
         },
         "bookingCL": {
-          "today": 43,
+        "today": 0,
           "target": 50,
           "percentTarget": 86
         },
         "bookingKSM": {
-          "today": 45,
+        "today": 0,
           "target": 53,
           "percentTarget": 84.91
         },
         "bookingCC": {
-          "today": 117,
+        "today": 0,
           "target": 132,
           "percentTarget": 88.64
         },
         "bookingMicro": {
-          "today": 84,
+        "today": 0,
           "target": 99,
           "percentTarget": 84.85
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 2800, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 220, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 10, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -2297,7 +2542,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 72.02,
+        "today": 483900,
           "wtd": -0.13,
           "mtd": -1.8,
           "ytd": 4.68,
@@ -2306,7 +2551,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 89.34
         },
         "giro": {
-          "today": 113.78,
+        "today": 416500,
           "wtd": -1.24,
           "mtd": -0.99,
           "ytd": -8.95,
@@ -2326,12 +2571,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 24,
+        "today": 3,
           "target": 23,
           "percentTarget": 104.35
         },
         "newCifGiro": {
-          "today": 15,
+        "today": 0,
           "target": 18,
           "percentTarget": 83.33
         },
@@ -2350,7 +2595,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 1142.3,
+        "today": 0,
           "wtd": 2.5,
           "mtd": 3.29,
           "ytd": 13,
@@ -2359,7 +2604,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.66
         },
         "cl": {
-          "today": 686.78,
+        "today": 26100,
           "wtd": 2.9,
           "mtd": -0.06,
           "ytd": -8.63,
@@ -2368,7 +2613,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.39
         },
         "ksm": {
-          "today": 413.9,
+        "today": 138000,
           "wtd": -1.14,
           "mtd": 5.7,
           "ytd": -8.57,
@@ -2377,7 +2622,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.79
         },
         "cc": {
-          "today": 354.68,
+        "today": 24800,
           "wtd": 0.53,
           "mtd": 10,
           "ytd": 11.29,
@@ -2386,42 +2631,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.64
         },
         "micro": {
-          "today": 207.06,
+        "today": 0,
           "wtd": 1.72,
           "mtd": 6.77,
           "ytd": 33.01,
           "yoy": 67.32,
           "target": 221.53,
           "percentTarget": 93.47
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 1, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 470, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 29,
+        "today": 0,
           "target": 33,
           "percentTarget": 87.88
         },
         "bookingCL": {
-          "today": 36,
+        "today": 0,
           "target": 42,
           "percentTarget": 85.71
         },
         "bookingKSM": {
-          "today": 54,
+        "today": 0,
           "target": 57,
           "percentTarget": 94.74
         },
         "bookingCC": {
-          "today": 136,
+        "today": 0,
           "target": 146,
           "percentTarget": 93.15
         },
         "bookingMicro": {
-          "today": 82,
+        "today": 0,
           "target": 87,
           "percentTarget": 94.25
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 2400, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 1470, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 13, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -2485,7 +2749,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 52.26,
+        "today": 274300,
           "wtd": -0.53,
           "mtd": 2.37,
           "ytd": 2.9,
@@ -2494,7 +2758,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 110.75
         },
         "giro": {
-          "today": 80.75,
+        "today": 54400,
           "wtd": 2.3,
           "mtd": -0.84,
           "ytd": 4.71,
@@ -2514,12 +2778,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 111,
+        "today": 7,
           "target": 104,
           "percentTarget": 106.73
         },
         "newCifGiro": {
-          "today": 8,
+        "today": 0,
           "target": 10,
           "percentTarget": 80
         },
@@ -2538,7 +2802,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 571.64,
+        "today": 36800,
           "wtd": -0.19,
           "mtd": 7.37,
           "ytd": 3.29,
@@ -2547,7 +2811,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.33
         },
         "cl": {
-          "today": 333.41,
+        "today": 26800,
           "wtd": -0.83,
           "mtd": 0.01,
           "ytd": 15.92,
@@ -2556,7 +2820,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.12
         },
         "ksm": {
-          "today": 221.28,
+        "today": 45500,
           "wtd": -1.91,
           "mtd": -2.48,
           "ytd": 12.2,
@@ -2565,7 +2829,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.78
         },
         "cc": {
-          "today": 179.01,
+        "today": 12500,
           "wtd": 2,
           "mtd": 0.69,
           "ytd": 36.99,
@@ -2574,42 +2838,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.3
         },
         "micro": {
-          "today": 116.2,
+        "today": 12480,
           "wtd": -0.62,
           "mtd": 4.49,
           "ytd": 27.98,
           "yoy": 13.74,
           "target": 116.54,
           "percentTarget": 99.71
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 70, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 14,
+        "today": 0,
           "target": 16,
           "percentTarget": 87.5
         },
         "bookingCL": {
-          "today": 22,
+        "today": 0,
           "target": 24,
           "percentTarget": 91.67
         },
         "bookingKSM": {
-          "today": 20,
+        "today": 0,
           "target": 20,
           "percentTarget": 100
         },
         "bookingCC": {
-          "today": 51,
+        "today": 0,
           "target": 56,
           "percentTarget": 91.07
         },
         "bookingMicro": {
-          "today": 44,
+        "today": 0,
           "target": 47,
           "percentTarget": 93.62
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 300, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 220, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 13, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -2673,7 +2956,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 60.63,
+        "today": 239200,
           "wtd": -1.14,
           "mtd": 2.29,
           "ytd": -1.17,
@@ -2682,7 +2965,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 87.54
         },
         "giro": {
-          "today": 75,
+        "today": 47900,
           "wtd": 1.41,
           "mtd": -3.23,
           "ytd": -4.98,
@@ -2702,12 +2985,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 83,
+        "today": 6,
           "target": 79,
           "percentTarget": 105.06
         },
         "newCifGiro": {
-          "today": 7,
+        "today": 0,
           "target": 9,
           "percentTarget": 77.78
         },
@@ -2726,7 +3009,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 571.37,
+        "today": 0,
           "wtd": 0.17,
           "mtd": -3.1,
           "ytd": 10.13,
@@ -2735,7 +3018,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.35
         },
         "cl": {
-          "today": 334.18,
+        "today": 19200,
           "wtd": 0.67,
           "mtd": -3.08,
           "ytd": -3.84,
@@ -2744,7 +3027,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.38
         },
         "ksm": {
-          "today": 227.25,
+        "today": 20800,
           "wtd": -0.42,
           "mtd": 8.1,
           "ytd": 37.54,
@@ -2753,7 +3036,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.05
         },
         "cc": {
-          "today": 157.34,
+        "today": 13300,
           "wtd": 0.71,
           "mtd": 2.69,
           "ytd": 2.21,
@@ -2762,42 +3045,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.7
         },
         "micro": {
-          "today": 109.98,
+        "today": 19590,
           "wtd": -1.54,
           "mtd": 9.09,
           "ytd": -2.77,
           "yoy": 56.09,
           "target": 113.01,
           "percentTarget": 97.32
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 310, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 13,
+        "today": 0,
           "target": 14,
           "percentTarget": 92.86
         },
         "bookingCL": {
-          "today": 15,
+        "today": 0,
           "target": 15,
           "percentTarget": 100
         },
         "bookingKSM": {
-          "today": 27,
+        "today": 0,
           "target": 28,
           "percentTarget": 96.43
         },
         "bookingCC": {
-          "today": 54,
+        "today": 0,
           "target": 58,
           "percentTarget": 93.1
         },
         "bookingMicro": {
-          "today": 33,
+        "today": 0,
           "target": 35,
           "percentTarget": 94.29
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 700, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 3, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 720, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 14, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -2861,7 +3163,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 64.26,
+        "today": 197800,
           "wtd": 1.27,
           "mtd": -3.08,
           "ytd": -4.41,
@@ -2870,7 +3172,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.73
         },
         "giro": {
-          "today": 86.68,
+        "today": 427400,
           "wtd": -0.61,
           "mtd": 4.1,
           "ytd": -5.93,
@@ -2890,12 +3192,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 89,
+        "today": 17,
           "target": 89,
           "percentTarget": 100
         },
         "newCifGiro": {
-          "today": 12,
+        "today": 0,
           "target": 12,
           "percentTarget": 100
         },
@@ -2914,7 +3216,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 586.6,
+        "today": 4000,
           "wtd": -1.24,
           "mtd": 7.77,
           "ytd": 22.81,
@@ -2923,7 +3225,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.42
         },
         "cl": {
-          "today": 326.76,
+        "today": 45600,
           "wtd": -1.11,
           "mtd": 2.98,
           "ytd": 10.43,
@@ -2932,7 +3234,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.89
         },
         "ksm": {
-          "today": 220.33,
+        "today": 49000,
           "wtd": -1.85,
           "mtd": 3.91,
           "ytd": 34.79,
@@ -2941,7 +3243,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.88
         },
         "cc": {
-          "today": 152.5,
+        "today": 22600,
           "wtd": 1.49,
           "mtd": 5.11,
           "ytd": 27.26,
@@ -2950,42 +3252,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.19
         },
         "micro": {
-          "today": 110.38,
+        "today": 0,
           "wtd": 1.35,
           "mtd": -3.06,
           "ytd": 13.83,
           "yoy": 42.48,
           "target": 114.98,
           "percentTarget": 96
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1360, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 13,
+        "today": 0,
           "target": 13,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 18,
+        "today": 0,
           "target": 19,
           "percentTarget": 94.74
         },
         "bookingKSM": {
-          "today": 23,
+        "today": 0,
           "target": 25,
           "percentTarget": 92
         },
         "bookingCC": {
-          "today": 51,
+        "today": 0,
           "target": 58,
           "percentTarget": 87.93
         },
         "bookingMicro": {
-          "today": 34,
+        "today": 0,
           "target": 38,
           "percentTarget": 89.47
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 2200, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 3, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 440, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 20, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -3049,7 +3370,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 56.11,
+        "today": 347700,
           "wtd": -0.55,
           "mtd": 0.54,
           "ytd": 0.27,
@@ -3058,7 +3379,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 108.96
         },
         "giro": {
-          "today": 59.83,
+        "today": 126300,
           "wtd": -1.01,
           "mtd": 1.29,
           "ytd": -4.3,
@@ -3078,12 +3399,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 40,
+        "today": 14,
           "target": 48,
           "percentTarget": 83.33
         },
         "newCifGiro": {
-          "today": 12,
+        "today": 0,
           "target": 12,
           "percentTarget": 100
         },
@@ -3102,7 +3423,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 527.76,
+        "today": 29000,
           "wtd": -0.35,
           "mtd": 2.91,
           "ytd": -9.5,
@@ -3111,7 +3432,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.48
         },
         "cl": {
-          "today": 314.13,
+        "today": 27600,
           "wtd": 0.22,
           "mtd": 4.75,
           "ytd": -8.9,
@@ -3120,7 +3441,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 90.92
         },
         "ksm": {
-          "today": 218.76,
+        "today": 21800,
           "wtd": -1.16,
           "mtd": -2.68,
           "ytd": -0.05,
@@ -3129,7 +3450,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.39
         },
         "cc": {
-          "today": 175.27,
+        "today": 17100,
           "wtd": 1.48,
           "mtd": 5.57,
           "ytd": 36.42,
@@ -3138,42 +3459,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.27
         },
         "micro": {
-          "today": 117.78,
+        "today": 16470,
           "wtd": 1.37,
           "mtd": 9.27,
           "ytd": 0.67,
           "yoy": 54.07,
           "target": 123.07,
           "percentTarget": 95.71
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1130, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 11,
+        "today": 0,
           "target": 12,
           "percentTarget": 91.67
         },
         "bookingCL": {
-          "today": 17,
+        "today": 0,
           "target": 19,
           "percentTarget": 89.47
         },
         "bookingKSM": {
-          "today": 22,
+        "today": 0,
           "target": 23,
           "percentTarget": 95.65
         },
         "bookingCC": {
-          "today": 72,
+        "today": 0,
           "target": 77,
           "percentTarget": 93.51
         },
         "bookingMicro": {
-          "today": 31,
+        "today": 0,
           "target": 33,
           "percentTarget": 93.94
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 1800, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 3, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 1910, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 25, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -3237,7 +3577,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 43.86,
+        "today": 545900,
           "wtd": -0.14,
           "mtd": 0.47,
           "ytd": -1.05,
@@ -3246,7 +3586,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 107.79
         },
         "giro": {
-          "today": 70.59,
+        "today": 347400,
           "wtd": 1.16,
           "mtd": -0.46,
           "ytd": 3.41,
@@ -3266,12 +3606,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 33,
+        "today": 12,
           "target": 37,
           "percentTarget": 89.19
         },
         "newCifGiro": {
-          "today": 23,
+        "today": 0,
           "target": 23,
           "percentTarget": 100
         },
@@ -3290,7 +3630,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 534.66,
+        "today": 6300,
           "wtd": 0.73,
           "mtd": -0.19,
           "ytd": 5.71,
@@ -3299,7 +3639,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.94
         },
         "cl": {
-          "today": 356.15,
+        "today": 17600,
           "wtd": -1.65,
           "mtd": 8.71,
           "ytd": 25.19,
@@ -3308,7 +3648,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.46
         },
         "ksm": {
-          "today": 232.18,
+        "today": 20500,
           "wtd": 2.37,
           "mtd": -1.44,
           "ytd": 32.42,
@@ -3317,7 +3657,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.89
         },
         "cc": {
-          "today": 163.69,
+        "today": 19500,
           "wtd": 2.63,
           "mtd": -0.75,
           "ytd": 26.31,
@@ -3326,42 +3666,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.75
         },
         "micro": {
-          "today": 111.09,
+        "today": 0,
           "wtd": 1.35,
           "mtd": 5.21,
           "ytd": 4.34,
           "yoy": 46.02,
           "target": 113.03,
           "percentTarget": 98.28
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 2620, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 11,
+        "today": 0,
           "target": 11,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 15,
+        "today": 0,
           "target": 17,
           "percentTarget": 88.24
         },
         "bookingKSM": {
-          "today": 20,
+        "today": 0,
           "target": 22,
           "percentTarget": 90.91
         },
         "bookingCC": {
-          "today": 66,
+        "today": 0,
           "target": 79,
           "percentTarget": 83.54
         },
         "bookingMicro": {
-          "today": 39,
+        "today": 0,
           "target": 43,
           "percentTarget": 90.7
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 500, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 1160, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 18, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -3425,7 +3784,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 64.56,
+        "today": 203000,
           "wtd": 1.64,
           "mtd": 0.78,
           "ytd": -0.36,
@@ -3434,7 +3793,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.33
         },
         "giro": {
-          "today": 92.28,
+        "today": 77200,
           "wtd": 0.36,
           "mtd": -2.66,
           "ytd": -3.73,
@@ -3454,12 +3813,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 105,
+        "today": 4,
           "target": 108,
           "percentTarget": 97.22
         },
         "newCifGiro": {
-          "today": 10,
+        "today": 0,
           "target": 12,
           "percentTarget": 83.33
         },
@@ -3478,7 +3837,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 581.08,
+        "today": 27000,
           "wtd": -1.79,
           "mtd": 9.36,
           "ytd": 12.84,
@@ -3487,7 +3846,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.46
         },
         "cl": {
-          "today": 329.14,
+        "today": 14200,
           "wtd": 2.08,
           "mtd": 1.35,
           "ytd": 24.42,
@@ -3496,7 +3855,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.98
         },
         "ksm": {
-          "today": 205.26,
+        "today": 12400,
           "wtd": -1.06,
           "mtd": -0.7,
           "ytd": -8.65,
@@ -3505,7 +3864,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.74
         },
         "cc": {
-          "today": 161.37,
+        "today": 12700,
           "wtd": 1.28,
           "mtd": 3.31,
           "ytd": 32.12,
@@ -3514,42 +3873,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.62
         },
         "micro": {
-          "today": 102.9,
+        "today": 0,
           "wtd": 0.32,
           "mtd": 0.5,
           "ytd": 20.33,
           "yoy": 14.92,
           "target": 108.31,
           "percentTarget": 95.01
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 3010, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 11,
+        "today": 0,
           "target": 12,
           "percentTarget": 91.67
         },
         "bookingCL": {
-          "today": 19,
+        "today": 0,
           "target": 20,
           "percentTarget": 95
         },
         "bookingKSM": {
-          "today": 21,
+        "today": 0,
           "target": 21,
           "percentTarget": 100
         },
         "bookingCC": {
-          "today": 74,
+        "today": 0,
           "target": 75,
           "percentTarget": 98.67
         },
         "bookingMicro": {
-          "today": 39,
+        "today": 0,
           "target": 41,
           "percentTarget": 95.12
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 300, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 3, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 170, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 15, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -3613,7 +3991,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 34.69,
+        "today": 266400,
           "wtd": 0.06,
           "mtd": -1.01,
           "ytd": 1.76,
@@ -3622,7 +4000,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.56
         },
         "giro": {
-          "today": 55.09,
+        "today": 1968000,
           "wtd": -0.61,
           "mtd": 0.1,
           "ytd": -2.46,
@@ -3642,12 +4020,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 71,
+        "today": 3,
           "target": 70,
           "percentTarget": 101.43
         },
         "newCifGiro": {
-          "today": 8,
+        "today": 0,
           "target": 10,
           "percentTarget": 80
         },
@@ -3666,7 +4044,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 250.98,
+        "today": 0,
           "wtd": 0.9,
           "mtd": 6.26,
           "ytd": 9.18,
@@ -3675,7 +4053,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.1
         },
         "cl": {
-          "today": 157.19,
+        "today": 6600,
           "wtd": -1.85,
           "mtd": 1.71,
           "ytd": 15.01,
@@ -3684,7 +4062,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.62
         },
         "ksm": {
-          "today": 103.19,
+        "today": 10600,
           "wtd": 0.71,
           "mtd": -4.67,
           "ytd": -6.81,
@@ -3693,7 +4071,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.87
         },
         "cc": {
-          "today": 78.59,
+        "today": 11400,
           "wtd": 2.22,
           "mtd": -3.97,
           "ytd": -8.95,
@@ -3702,42 +4080,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.2
         },
         "micro": {
-          "today": 55.43,
+        "today": 0,
           "wtd": 2.67,
           "mtd": 0.09,
           "ytd": -9.15,
           "yoy": 41.57,
           "target": 55.71,
           "percentTarget": 99.49
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 4740, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 5,
+        "today": 0,
           "target": 5,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 10,
+        "today": 0,
           "target": 11,
           "percentTarget": 90.91
         },
         "bookingKSM": {
-          "today": 10,
+        "today": 0,
           "target": 11,
           "percentTarget": 90.91
         },
         "bookingCC": {
-          "today": 29,
+        "today": 0,
           "target": 31,
           "percentTarget": 93.55
         },
         "bookingMicro": {
-          "today": 17,
+        "today": 0,
           "target": 20,
           "percentTarget": 85
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 1900, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 370, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 17, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -3801,7 +4198,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 31.03,
+        "today": 569300,
           "wtd": -0.28,
           "mtd": -0.28,
           "ytd": 1.63,
@@ -3810,7 +4207,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 110.46
         },
         "giro": {
-          "today": 57.5,
+        "today": 153900,
           "wtd": 0.13,
           "mtd": -2.85,
           "ytd": -4.68,
@@ -3830,12 +4227,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 71,
+        "today": 0,
           "target": 81,
           "percentTarget": 87.65
         },
         "newCifGiro": {
-          "today": 19,
+        "today": 0,
           "target": 23,
           "percentTarget": 82.61
         },
@@ -3854,7 +4251,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 284.25,
+        "today": 11300,
           "wtd": 0.06,
           "mtd": 1.45,
           "ytd": 11.5,
@@ -3863,7 +4260,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.01
         },
         "cl": {
-          "today": 174.99,
+        "today": 7800,
           "wtd": -1.24,
           "mtd": 6.36,
           "ytd": 21.75,
@@ -3872,7 +4269,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.84
         },
         "ksm": {
-          "today": 116.75,
+        "today": 30600,
           "wtd": 2.01,
           "mtd": -2.23,
           "ytd": 7.24,
@@ -3881,7 +4278,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.55
         },
         "cc": {
-          "today": 79.31,
+        "today": 9600,
           "wtd": 1.19,
           "mtd": 1.98,
           "ytd": 15.5,
@@ -3890,42 +4287,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 96.41
         },
         "micro": {
-          "today": 52.83,
+        "today": 22790,
           "wtd": -1.83,
           "mtd": -3.07,
           "ytd": -2.39,
           "yoy": -13.19,
           "target": 54.52,
           "percentTarget": 96.91
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 670, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 5,
+        "today": 0,
           "target": 5,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 8,
+        "today": 0,
           "target": 9,
           "percentTarget": 88.89
         },
         "bookingKSM": {
-          "today": 14,
+        "today": 0,
           "target": 15,
           "percentTarget": 93.33
         },
         "bookingCC": {
-          "today": 34,
+        "today": 0,
           "target": 36,
           "percentTarget": 94.44
         },
         "bookingMicro": {
-          "today": 17,
+        "today": 0,
           "target": 18,
           "percentTarget": 94.44
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 100, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 230, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 5, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -3989,7 +4405,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 35.3,
+        "today": 126700,
           "wtd": 0.01,
           "mtd": 0.3,
           "ytd": -0.79,
@@ -3998,7 +4414,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 84.99
         },
         "giro": {
-          "today": 51.83,
+        "today": 265900,
           "wtd": 0.55,
           "mtd": -2.49,
           "ytd": -4.22,
@@ -4018,12 +4434,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 113,
+        "today": 7,
           "target": 118,
           "percentTarget": 95.76
         },
         "newCifGiro": {
-          "today": 14,
+        "today": 0,
           "target": 13,
           "percentTarget": 107.69
         },
@@ -4042,7 +4458,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 259.7,
+        "today": 0,
           "wtd": 1.79,
           "mtd": -4.04,
           "ytd": 39.86,
@@ -4051,7 +4467,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.14
         },
         "cl": {
-          "today": 178.73,
+        "today": 16400,
           "wtd": 1.89,
           "mtd": 7.98,
           "ytd": 11.98,
@@ -4060,7 +4476,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.28
         },
         "ksm": {
-          "today": 108.39,
+        "today": 28800,
           "wtd": -1.72,
           "mtd": 4.07,
           "ytd": 32.05,
@@ -4069,7 +4485,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.54
         },
         "cc": {
-          "today": 78.43,
+        "today": 7200,
           "wtd": 0.79,
           "mtd": -2.37,
           "ytd": 33.49,
@@ -4078,42 +4494,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 99.45
         },
         "micro": {
-          "today": 55.1,
+        "today": 0,
           "wtd": -0.73,
           "mtd": 3.19,
           "ytd": -9.48,
           "yoy": -11.9,
           "target": 55.51,
           "percentTarget": 99.27
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1890, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 7,
+        "today": 0,
           "target": 8,
           "percentTarget": 87.5
         },
         "bookingCL": {
-          "today": 8,
+        "today": 0,
           "target": 8,
           "percentTarget": 100
         },
         "bookingKSM": {
-          "today": 11,
+        "today": 0,
           "target": 12,
           "percentTarget": 91.67
         },
         "bookingCC": {
-          "today": 36,
+        "today": 0,
           "target": 42,
           "percentTarget": 85.71
         },
         "bookingMicro": {
-          "today": 19,
+        "today": 0,
           "target": 20,
           "percentTarget": 95
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 300, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 800, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 19, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -4177,7 +4612,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 37.96,
+        "today": 61200,
           "wtd": -0.37,
           "mtd": -1.56,
           "ytd": -1.89,
@@ -4186,7 +4621,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 89.12
         },
         "giro": {
-          "today": 46.15,
+        "today": 94500,
           "wtd": 1.14,
           "mtd": 1.05,
           "ytd": 2.25,
@@ -4206,12 +4641,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 32,
+        "today": 6,
           "target": 36,
           "percentTarget": 88.89
         },
         "newCifGiro": {
-          "today": 11,
+        "today": 0,
           "target": 13,
           "percentTarget": 84.62
         },
@@ -4230,7 +4665,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 268.34,
+        "today": 0,
           "wtd": 2.69,
           "mtd": 7.02,
           "ytd": 33.18,
@@ -4239,7 +4674,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 98.81
         },
         "cl": {
-          "today": 171.82,
+        "today": 6300,
           "wtd": 1,
           "mtd": 3.1,
           "ytd": 5.15,
@@ -4248,7 +4683,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.26
         },
         "ksm": {
-          "today": 107.85,
+        "today": 7300,
           "wtd": 2.98,
           "mtd": 3.49,
           "ytd": -9.32,
@@ -4257,7 +4692,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.13
         },
         "cc": {
-          "today": 88.64,
+        "today": 6000,
           "wtd": -1.28,
           "mtd": 8.31,
           "ytd": 8.1,
@@ -4266,42 +4701,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.51
         },
         "micro": {
-          "today": 54.97,
+        "today": 0,
           "wtd": 1.2,
           "mtd": 5.69,
           "ytd": 38.61,
           "yoy": 72.98,
           "target": 58.53,
           "percentTarget": 93.93
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 3050, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 6,
+        "today": 0,
           "target": 6,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 7,
+        "today": 0,
           "target": 7,
           "percentTarget": 100
         },
         "bookingKSM": {
-          "today": 10,
+        "today": 0,
           "target": 10,
           "percentTarget": 100
         },
         "bookingCC": {
-          "today": 35,
+        "today": 0,
           "target": 37,
           "percentTarget": 94.59
         },
         "bookingMicro": {
-          "today": 19,
+        "today": 0,
           "target": 20,
           "percentTarget": 95
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 300, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 1050, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 12, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -4365,7 +4819,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 41.53,
+        "today": 295300,
           "wtd": 0.09,
           "mtd": -1.34,
           "ytd": 0.9,
@@ -4374,7 +4828,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.93
         },
         "giro": {
-          "today": 79.59,
+        "today": 141700,
           "wtd": 1.4,
           "mtd": 2.87,
           "ytd": 1.45,
@@ -4394,12 +4848,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 44,
+        "today": 6,
           "target": 44,
           "percentTarget": 100
         },
         "newCifGiro": {
-          "today": 6,
+        "today": 0,
           "target": 7,
           "percentTarget": 85.71
         },
@@ -4418,7 +4872,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 291,
+        "today": 6500,
           "wtd": -1.19,
           "mtd": 4.49,
           "ytd": 12.37,
@@ -4427,7 +4881,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.02
         },
         "cl": {
-          "today": 162.12,
+        "today": 29500,
           "wtd": 0.29,
           "mtd": 1.39,
           "ytd": 21.33,
@@ -4436,7 +4890,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.62
         },
         "ksm": {
-          "today": 116.22,
+        "today": 12600,
           "wtd": 2.75,
           "mtd": -0.91,
           "ytd": 13.78,
@@ -4445,7 +4899,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.64
         },
         "cc": {
-          "today": 82.82,
+        "today": 17900,
           "wtd": 0.96,
           "mtd": -1.57,
           "ytd": 16.47,
@@ -4454,42 +4908,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.15
         },
         "micro": {
-          "today": 55.83,
+        "today": 0,
           "wtd": -1.03,
           "mtd": 1.88,
           "ytd": 19.59,
           "yoy": 9.84,
           "target": 56.34,
           "percentTarget": 99.09
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 3490, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 6,
+        "today": 0,
           "target": 6,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 8,
+        "today": 0,
           "target": 8,
           "percentTarget": 100
         },
         "bookingKSM": {
-          "today": 13,
+        "today": 0,
           "target": 14,
           "percentTarget": 92.86
         },
         "bookingCC": {
-          "today": 27,
+        "today": 0,
           "target": 29,
           "percentTarget": 93.1
         },
         "bookingMicro": {
-          "today": 18,
+        "today": 0,
           "target": 20,
           "percentTarget": 90
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 2500, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 2, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 660, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 40, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -4553,7 +5026,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 45.01,
+        "today": 114400,
           "wtd": -0.54,
           "mtd": 2.09,
           "ytd": 2.83,
@@ -4562,7 +5035,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 84.07
         },
         "giro": {
-          "today": 57.99,
+        "today": 261700,
           "wtd": 0.08,
           "mtd": 0.56,
           "ytd": 0.78,
@@ -4582,12 +5055,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 115,
+        "today": 4,
           "target": 137,
           "percentTarget": 83.94
         },
         "newCifGiro": {
-          "today": 12,
+        "today": 0,
           "target": 13,
           "percentTarget": 92.31
         },
@@ -4606,7 +5079,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 271.49,
+        "today": 23100,
           "wtd": 0.44,
           "mtd": -3.79,
           "ytd": 1.69,
@@ -4615,7 +5088,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.13
         },
         "cl": {
-          "today": 175.42,
+        "today": 29800,
           "wtd": 0.98,
           "mtd": -3.36,
           "ytd": -0.79,
@@ -4624,7 +5097,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.95
         },
         "ksm": {
-          "today": 111.56,
+        "today": 27100,
           "wtd": -0.5,
           "mtd": -3.71,
           "ytd": -7.15,
@@ -4633,7 +5106,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.48
         },
         "cc": {
-          "today": 85.32,
+        "today": 9700,
           "wtd": 1.99,
           "mtd": 8.15,
           "ytd": -8.86,
@@ -4642,42 +5115,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 97.28
         },
         "micro": {
-          "today": 58.86,
+        "today": 0,
           "wtd": 0.19,
           "mtd": 8.73,
           "ytd": 20.21,
           "yoy": 55.75,
           "target": 63.05,
           "percentTarget": 93.35
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 360, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 5,
+        "today": 0,
           "target": 5,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 9,
+        "today": 0,
           "target": 10,
           "percentTarget": 90
         },
         "bookingKSM": {
-          "today": 10,
+        "today": 0,
           "target": 11,
           "percentTarget": 90.91
         },
         "bookingCC": {
-          "today": 28,
+        "today": 0,
           "target": 30,
           "percentTarget": 93.33
         },
         "bookingMicro": {
-          "today": 20,
+        "today": 0,
           "target": 20,
           "percentTarget": 100
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 1300, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 860, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 7, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -4741,7 +5233,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 46.57,
+        "today": 88700,
           "wtd": -0.43,
           "mtd": -1.02,
           "ytd": -1.92,
@@ -4750,7 +5242,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 91.29
         },
         "giro": {
-          "today": 58.26,
+        "today": 122200,
           "wtd": -0.06,
           "mtd": 2.42,
           "ytd": -1.16,
@@ -4770,12 +5262,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 111,
+        "today": 10,
           "target": 127,
           "percentTarget": 87.4
         },
         "newCifGiro": {
-          "today": 19,
+        "today": 0,
           "target": 18,
           "percentTarget": 105.56
         },
@@ -4794,7 +5286,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 270.59,
+        "today": 5700,
           "wtd": 1.56,
           "mtd": 4.04,
           "ytd": -3.52,
@@ -4803,7 +5295,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.47
         },
         "cl": {
-          "today": 167,
+        "today": 30900,
           "wtd": -0.15,
           "mtd": -4.14,
           "ytd": -3.25,
@@ -4812,7 +5304,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.33
         },
         "ksm": {
-          "today": 113.59,
+        "today": 39800,
           "wtd": 2.28,
           "mtd": 8.26,
           "ytd": 4.59,
@@ -4821,7 +5313,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.19
         },
         "cc": {
-          "today": 88.35,
+        "today": 6200,
           "wtd": -0.85,
           "mtd": 8.4,
           "ytd": -3.31,
@@ -4830,42 +5322,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93
         },
         "micro": {
-          "today": 56.07,
+        "today": 0,
           "wtd": 2.31,
           "mtd": 5.34,
           "ytd": 29.64,
           "yoy": -9.81,
           "target": 58.29,
           "percentTarget": 96.19
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 840, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 7,
+        "today": 0,
           "target": 7,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 7,
+        "today": 0,
           "target": 8,
           "percentTarget": 87.5
         },
         "bookingKSM": {
-          "today": 11,
+        "today": 0,
           "target": 13,
           "percentTarget": 84.62
         },
         "bookingCC": {
-          "today": 25,
+        "today": 0,
           "target": 26,
           "percentTarget": 96.15
         },
         "bookingMicro": {
-          "today": 20,
+        "today": 0,
           "target": 23,
           "percentTarget": 86.96
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 100, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 1, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 760, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 14, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -4929,7 +5440,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "funding": {
       "lagging": {
         "tabungan": {
-          "today": 34.58,
+        "today": 59000,
           "wtd": 0.19,
           "mtd": 1.11,
           "ytd": 2.92,
@@ -4938,7 +5449,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 84.52
         },
         "giro": {
-          "today": 58.19,
+        "today": 410600,
           "wtd": -0.9,
           "mtd": -0.91,
           "ytd": 1.37,
@@ -4958,12 +5469,12 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
       },
       "leading": {
         "newCifTabungan": {
-          "today": 75,
+        "today": 4,
           "target": 86,
           "percentTarget": 87.21
         },
         "newCifGiro": {
-          "today": 9,
+        "today": 0,
           "target": 11,
           "percentTarget": 81.82
         },
@@ -4982,7 +5493,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
     "kredit": {
       "lagging": {
         "sme": {
-          "today": 262.29,
+        "today": 4800,
           "wtd": 1.63,
           "mtd": 3.47,
           "ytd": 14.02,
@@ -4991,7 +5502,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 93.27
         },
         "cl": {
-          "today": 163.85,
+        "today": 21800,
           "wtd": -1.92,
           "mtd": 9.59,
           "ytd": 33.23,
@@ -5000,7 +5511,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 94.37
         },
         "ksm": {
-          "today": 115.24,
+        "today": 13200,
           "wtd": -1.24,
           "mtd": 7.19,
           "ytd": 29.27,
@@ -5009,7 +5520,7 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 95.91
         },
         "cc": {
-          "today": 78.28,
+        "today": 4100,
           "wtd": -1.39,
           "mtd": 5.96,
           "ytd": 39.13,
@@ -5018,42 +5529,61 @@ export const sumberDataTerpadu: UnifiedBranch[] = [
           "percentTarget": 92.78
         },
         "micro": {
-          "today": 56.36,
+        "today": 0,
           "wtd": -1.08,
           "mtd": 9.53,
           "ytd": 18.43,
           "yoy": -13.53,
           "target": 56.84,
           "percentTarget": 99.14
-        }
+        },
+        "smeReferral": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingRegular": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "clBookingFLPP": { "today": 0, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "ccAplikasi": { "today": 3, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+        "kkb": { "today": 1750, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 }
       },
       "leading": {
         "bookingSME": {
-          "today": 6,
+        "today": 0,
           "target": 6,
           "percentTarget": 100
         },
         "bookingCL": {
-          "today": 8,
+        "today": 0,
           "target": 9,
           "percentTarget": 88.89
         },
         "bookingKSM": {
-          "today": 11,
+        "today": 220,
           "target": 13,
           "percentTarget": 84.62
         },
         "bookingCC": {
-          "today": 30,
+        "today": 0,
           "target": 34,
           "percentTarget": 88.24
         },
         "bookingMicro": {
-          "today": 22,
+        "today": 0,
           "target": 22,
           "percentTarget": 100
-        }
+        },
+        "bookingKKB": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
       }
+    },
+      
+    "transaction": {
+      "newEDC": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svEDC": { "today": 300, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLVM": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "svLvmMTD": { "today": 70, "wtd": 0, "mtd": 0, "ytd": 0, "yoy": 0, "target": Math.floor(Math.random() * 100000) + 10000, "percentTarget": 100 },
+      "newLivinUreg": { "today": 6, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "newUregKopra": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
+    },
+    "prioritas": {
+      "ntp": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 },
+      "ntb": { "today": 0, "target": Math.floor(Math.random() * 50) + 10, "percentTarget": 100 }
     },
     "ekosistem": {
       "bodBocSME": {
@@ -5166,11 +5696,17 @@ export const getFundingAreaTotal = (): FundingBranch => {
 export const getKreditAreaTotal = (): KreditBranch => {
   const total: KreditBranch = {
     code: "all", class: "A.1", name: "Area Jakarta Tebet Supomo",
-    lagging: { sme: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, cl: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, ksm: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, cc: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, micro: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 } },
-    leading: { bookingSME: { today: 0, target: 0, percentTarget: 0 }, bookingCL: { today: 0, target: 0, percentTarget: 0 }, bookingKSM: { today: 0, target: 0, percentTarget: 0 }, bookingCC: { today: 0, target: 0, percentTarget: 0 }, bookingMicro: { today: 0, target: 0, percentTarget: 0 } }
+    lagging: { sme: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, cl: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, ksm: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, cc: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 }, micro: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+    smeReferral: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+    clBookingRegular: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+    clBookingFLPP: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+    ccAplikasi: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 },
+    kkb: { today: 0, wtd: 0, mtd: 0, ytd: 0, yoy: 0, target: 0, percentTarget: 0 } },
+    leading: { bookingSME: { today: 0, target: 0, percentTarget: 0 }, bookingCL: { today: 0, target: 0, percentTarget: 0 }, bookingKSM: { today: 0, target: 0, percentTarget: 0 }, bookingCC: { today: 0, target: 0, percentTarget: 0 }, bookingMicro: { today: 0, target: 0, percentTarget: 0 },
+    bookingKKB: { today: 0, target: 0, percentTarget: 0 } }
   };
   kreditBranches.forEach(b => {
-    (["sme", "cl", "ksm", "cc", "micro"] as const).forEach(type => {
+    (["sme", "cl", "ksm", "cc", "micro", "smeReferral", "clBookingRegular", "clBookingFLPP", "ccAplikasi", "kkb"] as const).forEach(type => {
       total.lagging[type].today += b.lagging[type].today;
       total.lagging[type].wtd += b.lagging[type].wtd;
       total.lagging[type].mtd += b.lagging[type].mtd;
@@ -5178,13 +5714,13 @@ export const getKreditAreaTotal = (): KreditBranch => {
       total.lagging[type].yoy += b.lagging[type].yoy;
       total.lagging[type].target += b.lagging[type].target;
     });
-    (["bookingSME", "bookingCL", "bookingKSM", "bookingCC", "bookingMicro"] as const).forEach(type => {
+    (["bookingSME", "bookingCL", "bookingKSM", "bookingCC", "bookingMicro", "bookingKKB"] as const).forEach(type => {
       total.leading[type].today += b.leading[type].today;
       total.leading[type].target += b.leading[type].target;
     });
   });
-  (["sme", "cl", "ksm", "cc", "micro"] as const).forEach(type => { total.lagging[type].percentTarget = total.lagging[type].target > 0 ? (total.lagging[type].today / total.lagging[type].target) * 100 : 0; });
-  (["bookingSME", "bookingCL", "bookingKSM", "bookingCC", "bookingMicro"] as const).forEach(type => { total.leading[type].percentTarget = total.leading[type].target > 0 ? (total.leading[type].today / total.leading[type].target) * 100 : 0; });
+  (["sme", "cl", "ksm", "cc", "micro", "smeReferral", "clBookingRegular", "clBookingFLPP", "ccAplikasi", "kkb"] as const).forEach(type => { total.lagging[type].percentTarget = total.lagging[type].target > 0 ? (total.lagging[type].today / total.lagging[type].target) * 100 : 0; });
+  (["bookingSME", "bookingCL", "bookingKSM", "bookingCC", "bookingMicro", "bookingKKB"] as const).forEach(type => { total.leading[type].percentTarget = total.leading[type].target > 0 ? (total.leading[type].today / total.leading[type].target) * 100 : 0; });
   return total;
 };
 
@@ -5203,5 +5739,58 @@ export const getEkosistemAreaTotal = (): EkosistemBranch => {
   (["bodBocSME", "bodBocCMC", "bodBocCB", "familyTree", "warungViral", "spbu", "kdkmp", "sppg", "billReminder"] as const).forEach(type => {
     total.ekosistem[type].percentTarget = total.ekosistem[type].target > 0 ? (total.ekosistem[type].today / total.ekosistem[type].target) * 100 : 0;
   });
+  return total;
+};
+export const getSummaryAreaTotal = (): UnifiedBranch => {
+  const total = JSON.parse(JSON.stringify(sumberDataTerpadu[0]));
+  total.code = "all";
+  total.name = "AREA JAKARTA TEBET SUPOMO";
+  total.class = "A.1";
+  
+  // Reset all to 0
+  const resetObject = (obj: any) => {
+    for (const key in obj) {
+      if (typeof obj[key] === 'number') obj[key] = 0;
+      else if (typeof obj[key] === 'object') resetObject(obj[key]);
+    }
+  };
+  resetObject(total.bpa);
+  resetObject(total.funding);
+  resetObject(total.kredit);
+  resetObject(total.ekosistem);
+  resetObject(total.transaction);
+  resetObject(total.prioritas);
+
+  sumberDataTerpadu.forEach(b => {
+    // Add all values
+    const addObject = (tObj: any, sObj: any) => {
+        for (const key in sObj) {
+            if (typeof sObj[key] === 'number' && key !== 'percentTarget') {
+                tObj[key] += sObj[key];
+            } else if (typeof sObj[key] === 'object' && tObj[key]) {
+                addObject(tObj[key], sObj[key]);
+            }
+        }
+    }
+    addObject(total.funding, b.funding);
+    addObject(total.kredit, b.kredit);
+    addObject(total.transaction, b.transaction);
+    addObject(total.prioritas, b.prioritas);
+  });
+
+  // Calculate percentages
+  const calcPercent = (obj: any) => {
+    if (obj && typeof obj.target === 'number' && typeof obj.today === 'number') {
+        obj.percentTarget = obj.target > 0 ? (obj.today / obj.target) * 100 : 0;
+    }
+    for (const key in obj) {
+        if (typeof obj[key] === 'object') calcPercent(obj[key]);
+    }
+  };
+  calcPercent(total.funding);
+  calcPercent(total.kredit);
+  calcPercent(total.transaction);
+  calcPercent(total.prioritas);
+
   return total;
 };

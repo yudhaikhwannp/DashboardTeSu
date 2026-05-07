@@ -12,6 +12,7 @@ import { cn } from '../lib/utils';
 import { sidebarDateText } from '../data/MasterData';
 
 const menuItems = [
+  { id: 'summary', label: 'Summary Area', icon: Trophy },   
   { id: 'bpa', label: 'Branch Profitability Analysis', icon: BarChart3 },
   { id: 'funding', label: 'Funding', icon: Wallet },
   { id: 'kredit', label: 'Kredit Retail', icon: CreditCard },

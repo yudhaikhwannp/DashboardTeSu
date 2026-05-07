@@ -12,9 +12,11 @@ import { KreditRetailDashboard } from './components/KreditRetailDashboard';
 import { EkosistemRegionDashboard } from './components/EkosistemRegionDashboard';
 import { Login } from './components/Login';
 
+import { SummaryAreaDashboard } from './components/SummaryAreaDashboard';
+
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [activeMenu, setActiveMenu] = useState('bpa');
+  const [activeMenu, setActiveMenu] = useState('summary');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -64,7 +66,9 @@ export default function App() {
         </div>
 
         <div className="flex-1 overflow-hidden h-full">
-          {activeMenu === 'bpa' ? (
+          {activeMenu === 'summary' ? (
+            <SummaryAreaDashboard />
+          ) : activeMenu === 'bpa' ? (
             <Dashboard />
           ) : activeMenu === 'funding' ? (
             <FundingDashboard />
